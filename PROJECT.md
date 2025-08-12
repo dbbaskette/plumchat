@@ -83,15 +83,15 @@ Below is the phased plan with checkboxes to track progress as we implement PlumC
   - [x] Select MCP transport: MCP over SSE (default), optional stdio for local tools
   - [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
   - [x] Confirm `gpstart`/`gpstop` approach: Remote SSH adapter to GP master/coordinator (no install required on GP host)
-  - [ ] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
-  - [ ] Confirm `gpstart`/`gpstop` approach (local shell vs remote RPC) and environment constraints
+  - [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
+  - [x] Confirm `gpstart`/`gpstop` approach (local shell vs remote RPC) and environment constraints
 - **Artifacts**
-  - [ ] Initialize Git repository (confirm if this project should be a Git repo)
-  - [ ] Add Maven Wrapper at root
+  - [x] Initialize Git repository (confirm if this project should be a Git repo)
+  - [x] Add Maven Wrapper at root
   - [x] Create documentation files: `mental_model.md`, `implementation_details.md`, `gotchas.md`, `quick_reference.md`
   - [x] Add a placeholder section for a Project Log at the top of `README.md`
 
-Libraries/frameworks: Maven + Wrapper, Git, Java 17 toolchain
+Libraries/frameworks: Maven + Wrapper, Git, Java 21 toolchain
 
 Reference Docs:
     https://docs.spring.io/spring-ai/reference/index.html
@@ -110,8 +110,9 @@ Reference Docs:
 ### Phase 1: Project Scaffolding (Multi-Module Maven)
 
 - [ ] Create parent POM with dependencyManagement sourced from `versions.txt`
-- [ ] Create modules: `host/`, `mcp-schema-server/`, `mcp-query-server/`, `mcp-mgmt-server/`, `ui/`
-- [ ] Root build succeeds with `mvn clean package`
+- [x] Create parent POM with dependencyManagement sourced from `versions.txt`
+- [x] Create modules: `host/`, `mcp-schema-server/`, `mcp-query-server/`, `mcp-mgmt-server/`, `ui/`
+- [x] Root build succeeds with `mvn clean package`
 
 Libraries/frameworks: Spring Boot 3.5.4 parent, BOM-managed dependencies
 
