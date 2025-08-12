@@ -21,8 +21,15 @@ import reactor.core.scheduler.Schedulers;
 @RequestMapping(path = "/query", produces = MediaType.APPLICATION_JSON_VALUE)
 public class QueryController {
 
-    public record QueryRequest(@NotBlank String host, int port, @NotBlank String database,
-                               @NotBlank String username, @NotBlank String password,
+    private final com.baskettecase.plumchat.mcpquery.connections.ConnectionResolver connectionResolver;
+
+    public QueryController(com.baskettecase.plumchat.mcpquery.connections.ConnectionResolver connectionResolver) {
+        this.connectionResolver = connectionResolver;
+    }
+
+    public record QueryRequest(String connection,
+                               String host, Integer port, String database,
+                               String username, String password,
                                @NotBlank String sql,
                                Integer fetchSize,
                                Integer timeoutSeconds,
@@ -37,14 +44,30 @@ public class QueryController {
     }
 
     private QueryResponse runQuery(QueryRequest request) throws Exception {
-        String url = "jdbc:postgresql://" + request.host() + ":" + request.port() + "/" + request.database();
+        String host = request.host();
+        Integer port = request.port();
+        String db = request.database();
+        String user = request.username();
+        String pass = request.password();
+        if (request.connection() != null && !request.connection().isBlank()) {
+            var resolvedOpt = connectionResolver.resolve(request.connection());
+            if (resolvedOpt.isPresent()) {
+                var r = resolvedOpt.get();
+                host = r.host();
+                port = r.port();
+                db = r.database();
+                user = r.username();
+                pass = r.password();
+            }
+        }
+        String url = "jdbc:postgresql://" + host + ":" + (port == null ? 5432 : port) + "/" + db;
         int fetchSize = request.fetchSize() != null ? request.fetchSize() : 200;
         int timeout = request.timeoutSeconds() != null ? request.timeoutSeconds() : 30;
         Integer maxRows = request.maxRows();
         List<String> columns = new ArrayList<>();
         List<List<String>> rows = new ArrayList<>();
 
-        try (Connection conn = DriverManager.getConnection(url, request.username(), request.password());
+        try (Connection conn = DriverManager.getConnection(url, user, pass);
              Statement stmt = conn.createStatement()) {
             conn.setNetworkTimeout(null, (int) Duration.ofSeconds(timeout).toMillis());
             stmt.setFetchSize(fetchSize);

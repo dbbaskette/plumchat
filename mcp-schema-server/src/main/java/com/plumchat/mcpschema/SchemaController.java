@@ -20,27 +20,45 @@ import reactor.core.scheduler.Schedulers;
 @RequestMapping(path = "/schema", produces = MediaType.APPLICATION_JSON_VALUE)
 public class SchemaController {
 
+    private final com.baskettecase.plumchat.mcpschema.connections.ConnectionResolver connectionResolver;
+
+    public SchemaController(com.baskettecase.plumchat.mcpschema.connections.ConnectionResolver connectionResolver) {
+        this.connectionResolver = connectionResolver;
+    }
+
     public record TableInfo(String schema, String name, String type) {}
 
     @GetMapping("/tables")
     public Mono<ResponseEntity<List<TableInfo>>> listTables(
-            @RequestParam @NotBlank String host,
-            @RequestParam int port,
-            @RequestParam @NotBlank String database,
-            @RequestParam @NotBlank String username,
-            @RequestParam @NotBlank String password,
+            @RequestParam(required = false) String connection,
+            @RequestParam(required = false) String host,
+            @RequestParam(required = false) Integer port,
+            @RequestParam(required = false) String database,
+            @RequestParam(required = false) String username,
+            @RequestParam(required = false) String password,
             @RequestParam(required = false) String schema,
             @RequestParam(required = false, defaultValue = "100") int limit,
             @RequestParam(required = false, defaultValue = "0") int offset) {
-        return Mono.fromCallable(() -> queryTables(host, port, database, username, password, schema, limit, offset))
+        return Mono.fromCallable(() -> queryTables(connection, host, port, database, username, password, schema, limit, offset))
                 .subscribeOn(Schedulers.boundedElastic())
                 .map(ResponseEntity::ok);
     }
 
-    private List<TableInfo> queryTables(String host, int port, String database, String user, String pass,
+    private List<TableInfo> queryTables(String connection, String host, Integer port, String database, String user, String pass,
                                         String schema, int limit, int offset) throws Exception {
+        if (connection != null && !connection.isBlank()) {
+            var resolvedOpt = connectionResolver.resolve(connection);
+            if (resolvedOpt.isPresent()) {
+                var r = resolvedOpt.get();
+                host = r.host();
+                port = r.port();
+                database = r.database();
+                user = r.username();
+                pass = r.password();
+            }
+        }
         String effectiveSchema = (schema == null || schema.isBlank()) ? "public" : schema;
-        String url = "jdbc:postgresql://" + host + ":" + port + "/" + database;
+        String url = "jdbc:postgresql://" + host + ":" + (port == null ? 5432 : port) + "/" + database;
         String sql = "select table_schema, table_name, table_type from information_schema.tables " +
                 "where table_schema='" + effectiveSchema + "' order by table_name limit " + limit + " offset " + offset;
 
