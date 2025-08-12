@@ -15,6 +15,9 @@ ui/dist/
 ### OS
 .DS_Store
 
+### Temp vendored sources
+.tmp/
+
 ### Prompt artifacts
 combined_prompt.md
 CLAUDE.md
