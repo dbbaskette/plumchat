@@ -1,0 +1,8 @@
+java=21
+spring.boot=3.5.4
+spring.ai=1.0.0
+lombok=1.18.34
+jdbc.postgresql=42.7.4
+testcontainers=1.20.1
+
+
