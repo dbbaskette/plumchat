@@ -1,0 +1,21 @@
+<configuration>
+  <appender name="JSON" class="net.logstash.logback.appender.LoggingEventAsyncDisruptorAppender">
+    <appender-ref ref="JSON_INNER"/>
+  </appender>
+  <appender name="JSON_INNER" class="net.logstash.logback.appender.LoggingEventCompositeJsonEncoder">
+    <providers>
+      <timestamp/>
+      <logLevel/>
+      <loggerName/>
+      <threadName/>
+      <message/>
+      <mdcFields/>
+      <stackTrace/>
+    </providers>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="JSON"/>
+  </root>
+</configuration>
+
+

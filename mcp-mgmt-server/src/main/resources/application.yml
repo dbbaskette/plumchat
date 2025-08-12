@@ -5,5 +5,8 @@ management:
     web:
       exposure:
         include: health,info
+plumchat:
+  mgmt:
+    enabled: false
 
 

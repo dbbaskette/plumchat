@@ -31,6 +31,7 @@
         <spring.boot.version>3.5.4</spring.boot.version>
         <lombok.version>1.18.34</lombok.version>
         <postgresql.jdbc.version>42.7.4</postgresql.jdbc.version>
+        <logstash.encoder.version>7.4</logstash.encoder.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>

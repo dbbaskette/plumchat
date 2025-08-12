@@ -25,7 +25,11 @@ public class MgmtController {
     public record CommandResponse(String status, String output) {}
 
     @PostMapping(path = "/exec", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<CommandResponse>> exec(@RequestBody CommandRequest request) {
+    public Mono<ResponseEntity<CommandResponse>> exec(@RequestBody CommandRequest request,
+                                                      @org.springframework.beans.factory.annotation.Value("${plumchat.mgmt.enabled:false}") boolean mgmtEnabled) {
+        if (!mgmtEnabled) {
+            return Mono.just(ResponseEntity.status(403).body(new CommandResponse("DISABLED", "Management tools are disabled")));
+        }
         return Mono.fromCallable(() -> runAllowedCommand(request))
                 .subscribeOn(Schedulers.boundedElastic())
                 .map(resp -> ResponseEntity.ok(new CommandResponse("OK", resp)));
