@@ -132,14 +132,14 @@ Libraries/frameworks: Spring AI 1.0.0, Spring WebFlux, Spring Boot Actuator, Lom
 
 - **Schema Server**
   - [x] Expose schema discovery (tables, columns, views) endpoint scaffold (to be wired to JDBC)
-  - [ ] Implement `@Tool` in generic MCP server for schema listing (align with `mcp-server`)
+  - [x] Implement `@Tool` (Spring AI MCP) for schema listing
 - **Query Server**
   - [x] Endpoint scaffold for SQL execution (to be wired to JDBC with timeouts/pagination)
-  - [ ] Implement `@Tool` in generic MCP server for query execution (align with `mcp-server`)
+  - [x] Implement `@Tool` (Spring AI MCP) for query execution
   - [ ] Redact sensitive data in logs
 - **Management Server**
   - [x] Endpoint scaffold for SSH exec (to be wired with guardrails and specific gp commands)
-  - [ ] Implement `@Tool` in generic MCP server for `gpstart`, `gpstop`, `gpstate`
+  - [x] Implement `@Tool` for `gpstart`, `gpstop`, `gpstate`
   - [ ] Key management and hardening (SSH keypair, restricted user, host allow-list)
   - [ ] Role checks/guardrails and feature flag (disabled by default)
 - **Quality**
