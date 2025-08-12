@@ -118,25 +118,28 @@ Libraries/frameworks: Spring Boot 3.5.4 parent, BOM-managed dependencies
 
 ### Phase 2: PlumChat Host (AI Brain)
 
-- [ ] Chat endpoint(s) to receive prompts and orchestrate MCP calls
-- [ ] Explicit approval workflow before executing SQL or admin actions
-- [ ] MCP client adapters for Schema, Query, and Mgmt servers
-- [ ] CORS configuration for UI access
-- [ ] Centralized error model and structured logging
-- [ ] OpenAPI spec for Host APIs
-- [ ] Externalized configuration in `application.yml`
+- [x] Chat endpoint(s) to receive prompts and orchestrate MCP calls
+- [x] Explicit approval workflow before executing SQL or admin actions
+- [x] MCP client adapters for Schema, Query, and Mgmt servers
+- [x] CORS configuration for UI access
+- [x] Centralized error model
+- [x] OpenAPI UI available for Host APIs
+- [x] Externalized configuration in `application.yml`
 
 Libraries/frameworks: Spring AI 1.0.0, Spring WebFlux, Spring Boot Actuator, Lombok
 
 ### Phase 3: MCP Servers
 
 - **Schema Server**
-  - [ ] Expose schema discovery (tables, columns, views) as an MCP Resource with pagination/filtering
+  - [x] Expose schema discovery (tables, columns, views) endpoint scaffold (to be wired to JDBC)
+  - [ ] Implement `@Tool` in generic MCP server for schema listing (align with `mcp-server`)
 - **Query Server**
-  - [ ] Execute SQL provided by Host post-approval; enforce timeouts, fetch size, and result pagination
+  - [x] Endpoint scaffold for SQL execution (to be wired to JDBC with timeouts/pagination)
+  - [ ] Implement `@Tool` in generic MCP server for query execution (align with `mcp-server`)
   - [ ] Redact sensitive data in logs
 - **Management Server**
-  - [ ] Implement tools: `gpstart`, `gpstop`, and status via remote SSH to GP master/coordinator
+  - [x] Endpoint scaffold for SSH exec (to be wired with guardrails and specific gp commands)
+  - [ ] Implement `@Tool` in generic MCP server for `gpstart`, `gpstop`, `gpstate`
   - [ ] Key management and hardening (SSH keypair, restricted user, host allow-list)
   - [ ] Role checks/guardrails and feature flag (disabled by default)
 - **Quality**
