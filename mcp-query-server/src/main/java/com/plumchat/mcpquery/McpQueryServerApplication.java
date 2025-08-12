@@ -1,4 +1,4 @@
-package com.plumchat.mcpquery;
+package com.baskettecase.plumchat.mcpquery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

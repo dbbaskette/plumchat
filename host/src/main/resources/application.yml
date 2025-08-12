@@ -11,5 +11,12 @@ plumchat:
     allowed-origins: http://localhost:5173
   cors:
     allow-credentials: true
+  mcp:
+    schema:
+      base-url: http://localhost:8081
+    query:
+      base-url: http://localhost:8082
+    mgmt:
+      base-url: http://localhost:8083
 
 
