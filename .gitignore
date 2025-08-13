@@ -22,3 +22,5 @@ ui/dist/
 combined_prompt.md
 CLAUDE.md
 .gemini.md
+*.yml
+*.properties

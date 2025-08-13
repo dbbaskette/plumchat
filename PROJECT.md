@@ -71,53 +71,29 @@ You are a master SpringBoot developer and also an expert at Greenplum. Leverage 
 
 ---
 
-## 6. Phased Delivery Plan & Checklist
+<!-- devplan:start -->
+## Development Plan
 
-Below is the phased plan with checkboxes to track progress as we implement PlumChat. We will check these off as tasks are completed.
+## Phase: Decisions and Environment
+- [x] Confirm and pin versions; create `versions.txt` (Java 21, Spring Boot 3.5.4, Spring AI 1.0.1, Lombok, Greenplum JDBC)
+- [x] Choose frontend framework: React + Vite + TypeScript + Tailwind + shadcn/ui
+- [x] Select MCP transport: MCP over SSE (default), optional stdio for local tools
+- [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
+- [x] Confirm `gpstart`/`gpstop` approach: Remote SSH adapter to GP master/coordinator (no install required on GP host)
+- [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
+- [x] Confirm `gpstart`/`gpstop` approach (local shell vs remote RPC) and environment constraints
+- [x] Initialize Git repository (confirm if this project should be a Git repo)
+- [x] Add Maven Wrapper at root
+- [x] Create documentation files: `mental_model.md`, `implementation_details.md`, `gotchas.md`, `quick_reference.md`
+- [x] Add a placeholder section for a Project Log at the top of `README.md`
 
-### Phase 0: Decisions and Environment
-
-- **Decisions**
-  - [x] Confirm and pin versions; create `versions.txt` (Java 21, Spring Boot 3.5.4, Spring AI 1.0.1, Lombok, Greenplum JDBC)
-  - [x] Choose frontend framework: React + Vite + TypeScript + Tailwind + shadcn/ui
-  - [x] Select MCP transport: MCP over SSE (default), optional stdio for local tools
-  - [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
-  - [x] Confirm `gpstart`/`gpstop` approach: Remote SSH adapter to GP master/coordinator (no install required on GP host)
-  - [x] Confirm authentication flow (Greenplum JDBC credential check + database list retrieval)
-  - [x] Confirm `gpstart`/`gpstop` approach (local shell vs remote RPC) and environment constraints
-- **Artifacts**
-  - [x] Initialize Git repository (confirm if this project should be a Git repo)
-  - [x] Add Maven Wrapper at root
-  - [x] Create documentation files: `mental_model.md`, `implementation_details.md`, `gotchas.md`, `quick_reference.md`
-  - [x] Add a placeholder section for a Project Log at the top of `README.md`
-
-Libraries/frameworks: Maven + Wrapper, Git, Java 21 toolchain
-
-Reference Docs:
-    https://docs.spring.io/spring-ai/reference/index.html
-    https://docs.spring.io/spring-ai/reference/api/chatclient.html
-    https://docs.spring.io/spring-ai/reference/api/advisors.html
-    https://docs.spring.io/spring-ai/reference/api/prompt.html
-    https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html
-    https://docs.spring.io/spring-ai/reference/api/tools.html
-    https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html
-    https://docs.spring.io/spring-ai/reference/api/mcp/mcp-client-boot-starter-docs.html
-    https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html
-    https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html
-    https://docs.spring.io/spring-ai/reference/api/etl-pipeline.html
-    https://docs.spring.io/spring-ai/reference/api/vectordbs/pgvector.html
-
-### Phase 1: Project Scaffolding (Multi-Module Maven)
-
+## Phase: Project Scaffolding (Multi-Module Maven)
 - [ ] Create parent POM with dependencyManagement sourced from `versions.txt`
 - [x] Create parent POM with dependencyManagement sourced from `versions.txt`
 - [x] Create modules: `host/`, `mcp-schema-server/`, `mcp-query-server/`, `mcp-mgmt-server/`, `ui/`
 - [x] Root build succeeds with `mvn clean package`
 
-Libraries/frameworks: Spring Boot 3.5.4 parent, BOM-managed dependencies
-
-### Phase 2: PlumChat Host (AI Brain)
-
+## Phase: PlumChat Host (AI Brain)
 - [x] Chat endpoint(s) to receive prompts and orchestrate MCP calls
 - [x] Explicit approval workflow before executing SQL or admin actions
 - [x] MCP client adapters for Schema, Query, and Mgmt servers
@@ -126,61 +102,41 @@ Libraries/frameworks: Spring Boot 3.5.4 parent, BOM-managed dependencies
 - [x] OpenAPI UI available for Host APIs
 - [x] Externalized configuration in `application.yml`
 
-Libraries/frameworks: Spring AI 1.0.0, Spring WebFlux, Spring Boot Actuator, Lombok
+## Phase: MCP Servers
+- [x] Expose schema discovery (tables, columns, views) endpoint scaffold (to be wired to JDBC)
+- [x] Implement `@Tool` (Spring AI MCP) for schema listing
+- [x] Endpoint scaffold for SQL execution (to be wired to JDBC with timeouts/pagination)
+- [x] Implement `@Tool` (Spring AI MCP) for query execution
+- [ ] Redact sensitive data in logs
+- [x] Endpoint scaffold for SSH exec (to be wired with guardrails and specific gp commands)
+- [x] Implement `@Tool` for `gpstart`, `gpstop`, `gpstate`
+- [ ] Key management and hardening (SSH keypair, restricted user, host allow-list)
+- [ ] Role checks/guardrails and feature flag (disabled by default)
+- [ ] Unit tests for server tool implementations
 
-### Phase 3: MCP Servers
-
-- **Schema Server**
-  - [x] Expose schema discovery (tables, columns, views) endpoint scaffold (to be wired to JDBC)
-  - [x] Implement `@Tool` (Spring AI MCP) for schema listing
-- **Query Server**
-  - [x] Endpoint scaffold for SQL execution (to be wired to JDBC with timeouts/pagination)
-  - [x] Implement `@Tool` (Spring AI MCP) for query execution
-  - [ ] Redact sensitive data in logs
-- **Management Server**
-  - [x] Endpoint scaffold for SSH exec (to be wired with guardrails and specific gp commands)
-  - [x] Implement `@Tool` for `gpstart`, `gpstop`, `gpstate`
-  - [ ] Key management and hardening (SSH keypair, restricted user, host allow-list)
-  - [ ] Role checks/guardrails and feature flag (disabled by default)
-- **Quality**
-  - [ ] Unit tests for server tool implementations
-
-Libraries/frameworks: Spring WebFlux, JDBC (Greenplum/PostgreSQL driver), Lombok
-
-### Phase 4: Authentication Against Greenplum
-
+## Phase: Authentication Against Greenplum
 - [ ] Login endpoint validates user credentials via short-lived JDBC connection
 - [ ] Establish session/token on success (no persistence of DB credentials in Host)
 - [ ] Retrieve and return list of accessible databases
 - [ ] Security configuration hardened and externalized
 
-Libraries/frameworks: Spring Security, JDBC (HikariCP)
-
-### Phase 5: Frontend UI (Chat)
-
+## Phase: Frontend UI (Chat)
 - [ ] Scaffold chosen framework in `ui/`
 - [ ] Implement login form and session handling
 - [ ] Chat interface with SQL preview and Approve/Cancel flow
 - [ ] Results rendering (tabular) and error states
 - [ ] Environment-driven API base URL; local dev CORS verified
 
-Libraries/frameworks: React (Vite + TypeScript) or Angular/Vue alternative; optional UI toolkit (e.g., MUI)
-
-### Phase 6: Observability, Errors, and Compliance
-
+## Phase: Observability, Errors, and Compliance
 - [ ] Enable Actuator endpoints across services
 - [ ] Structured, contextual logs with correlation IDs where applicable
 - [ ] Consistent JSON error schema across Host and Servers; documented
 - [ ] Document edge cases and approvals in `gotchas.md`
 
-Libraries/frameworks: Spring Boot Actuator, Micrometer
-
-### Phase 7: Tests, Packaging, and DevOps
-
+## Phase: Tests, Packaging, and DevOps
 - [ ] Unit tests for Host orchestration logic
 - [ ] Integration tests for MCP server tools (Testcontainers or mocks)
 - [ ] Dockerfiles for each module
 - [ ] Run scripts and `.env.example` for local dev
 - [ ] Basic CI pipeline (build + test)
-
-Libraries/frameworks: JUnit 5, Mockito, Testcontainers (as feasible)
+<!-- devplan:end -->
