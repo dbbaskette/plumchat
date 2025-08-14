@@ -117,10 +117,10 @@ You are a master SpringBoot developer and also an expert at Greenplum. Leverage 
 - [ ] Unit tests for ToolsService implementations across servers
 
 ## Phase: Authentication Against Greenplum
-- [ ] Login endpoint validates user credentials via short-lived JDBC connection
-- [ ] Establish session/token on success (no persistence of DB credentials in Host)
-- [ ] Retrieve and return list of accessible databases
-- [ ] Security configuration hardened and externalized
+- [x] Login endpoint validates user credentials via short-lived JDBC connection
+- [x] Establish session cookie on success (no persistence of DB credentials in Host)
+- [x] Retrieve and return list of accessible databases
+- [x] Security configuration hardened and externalized (CORS, headers, authz)
 
 ## Phase: Frontend UI (Chat)
 - [ ] Scaffold chosen framework in `ui/`
