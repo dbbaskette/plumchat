@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.host.error;
+package com.plumchat.host.error;
 
 import java.time.Instant;
 import org.springframework.core.annotation.Order;

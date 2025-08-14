@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpmgmt.log;
+package com.plumchat.mcpmgmt.log;
 
 public final class Redaction {
     private Redaction() {}

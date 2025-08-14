@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpquery;
+package com.plumchat.mcpquery;
 
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.baskettecase")
+@ComponentScan(basePackages = "com.plumchat")
 public class McpQueryServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(McpQueryServerApplication.class, args);

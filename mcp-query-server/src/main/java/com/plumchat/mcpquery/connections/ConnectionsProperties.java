@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpquery.connections;
+package com.plumchat.mcpquery.connections;
 
 import java.util.ArrayList;
 import java.util.List;

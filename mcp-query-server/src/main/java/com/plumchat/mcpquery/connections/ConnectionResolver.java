@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpquery.connections;
+package com.plumchat.mcpquery.connections;
 
 import java.io.IOException;
 import java.nio.file.Files;

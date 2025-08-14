@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpmgmt;
+package com.plumchat.mcpmgmt;
 
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
@@ -26,13 +26,24 @@ public class MgmtController {
 
     @PostMapping(path = "/exec", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<CommandResponse>> exec(@RequestBody CommandRequest request,
-                                                      @org.springframework.beans.factory.annotation.Value("${plumchat.mgmt.enabled:false}") boolean mgmtEnabled) {
+                                                      @org.springframework.beans.factory.annotation.Value("${plumchat.mgmt.enabled:false}") boolean mgmtEnabled,
+                                                      @org.springframework.beans.factory.annotation.Value("${plumchat.mgmt.allowed-hosts:}") List<String> allowedHosts,
+                                                      @org.springframework.beans.factory.annotation.Value("${plumchat.mgmt.allowed-users:}") List<String> allowedUsers) {
         if (!mgmtEnabled) {
             return Mono.just(ResponseEntity.status(403).body(new CommandResponse("DISABLED", "Management tools are disabled")));
+        }
+        if (!isAllowed(request, allowedHosts, allowedUsers)) {
+            return Mono.just(ResponseEntity.status(403).body(new CommandResponse("FORBIDDEN", "Host or user not allowed")));
         }
         return Mono.fromCallable(() -> runAllowedCommand(request))
                 .subscribeOn(Schedulers.boundedElastic())
                 .map(resp -> ResponseEntity.ok(new CommandResponse("OK", resp)));
+    }
+
+    private boolean isAllowed(CommandRequest req, List<String> allowedHosts, List<String> allowedUsers) {
+        boolean hostOk = allowedHosts == null || allowedHosts.isEmpty() || allowedHosts.contains(req.host());
+        boolean userOk = allowedUsers == null || allowedUsers.isEmpty() || allowedUsers.contains(req.user());
+        return hostOk && userOk;
     }
 
     private String runAllowedCommand(CommandRequest req) throws Exception {

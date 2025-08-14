@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpquery;
+package com.plumchat.mcpquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

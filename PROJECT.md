@@ -88,7 +88,6 @@ You are a master SpringBoot developer and also an expert at Greenplum. Leverage 
 - [x] Add a placeholder section for a Project Log at the top of `README.md`
 
 ## Phase: Project Scaffolding (Multi-Module Maven)
-- [ ] Create parent POM with dependencyManagement sourced from `versions.txt`
 - [x] Create parent POM with dependencyManagement sourced from `versions.txt`
 - [x] Create modules: `host/`, `mcp-schema-server/`, `mcp-query-server/`, `mcp-mgmt-server/`, `ui/`
 - [x] Root build succeeds with `mvn clean package`
@@ -107,12 +106,15 @@ You are a master SpringBoot developer and also an expert at Greenplum. Leverage 
 - [x] Implement `@Tool` (Spring AI MCP) for schema listing
 - [x] Endpoint scaffold for SQL execution (to be wired to JDBC with timeouts/pagination)
 - [x] Implement `@Tool` (Spring AI MCP) for query execution
-- [ ] Redact sensitive data in logs
 - [x] Endpoint scaffold for SSH exec (to be wired with guardrails and specific gp commands)
 - [x] Implement `@Tool` for `gpstart`, `gpstop`, `gpstate`
-- [ ] Key management and hardening (SSH keypair, restricted user, host allow-list)
-- [ ] Role checks/guardrails and feature flag (disabled by default)
-- [ ] Unit tests for server tool implementations
+- [x] Management tools feature flag (disabled by default via `plumchat.mgmt.enabled=false`)
+- [x] Redaction utility classes present
+- [x] Wire redaction into logs (avoid plaintext creds; masked debug only)
+- [x] Key management guardrails (allowed key directories for server-side key loading)
+- [x] Role guardrails (host/user allow-lists enforced)
+- [x] Basic unit test: mgmt feature flag false -> 403
+- [ ] Unit tests for ToolsService implementations across servers
 
 ## Phase: Authentication Against Greenplum
 - [ ] Login endpoint validates user credentials via short-lived JDBC connection

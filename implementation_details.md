@@ -26,6 +26,8 @@ This document records technical decisions and their rationale.
 - SSH-based adapter from Mgmt Server to GP master/coordinator.
 - Dedicated restricted user, keypair management, host allow-list.
 - Feature-flagged and disabled by default.
+ - Guardrails: allow-list for hosts/users; optional key loading only from `plumchat.mgmt.allowed-key-dirs`.
+ - Endpoints/tools: `gpstart`, `gpstop`, `gpstate`; variants accept in-body key or server-side key path (validated).
 
 ## Observability
 - Spring Boot Actuator, structured logs, correlation IDs.
