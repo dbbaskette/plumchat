@@ -5,6 +5,8 @@ management:
     web:
       exposure:
         include: health,info
+cors:
+  allowed-origins: ["http://localhost:5173"]
 
 plumchat:
   ui:
