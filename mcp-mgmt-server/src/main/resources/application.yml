@@ -8,5 +8,8 @@ management:
 plumchat:
   mgmt:
     enabled: false
+    allowed-hosts: []
+    allowed-users: []
+    allowed-key-dirs: ["/etc/plumchat/keys", "/opt/plumchat/keys"]
 
 

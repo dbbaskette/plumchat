@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.host.config;
+package com.plumchat.host.config;
 
 import java.util.ArrayList;
 import java.util.Arrays;

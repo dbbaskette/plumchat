@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpschema;
+package com.plumchat.mcpschema;
 
 import jakarta.validation.constraints.NotBlank;
 import java.sql.Connection;
@@ -20,9 +20,9 @@ import reactor.core.scheduler.Schedulers;
 @RequestMapping(path = "/schema", produces = MediaType.APPLICATION_JSON_VALUE)
 public class SchemaController {
 
-    private final com.baskettecase.plumchat.mcpschema.connections.ConnectionResolver connectionResolver;
+    private final com.plumchat.mcpschema.connections.ConnectionResolver connectionResolver;
 
-    public SchemaController(com.baskettecase.plumchat.mcpschema.connections.ConnectionResolver connectionResolver) {
+    public SchemaController(com.plumchat.mcpschema.connections.ConnectionResolver connectionResolver) {
         this.connectionResolver = connectionResolver;
     }
 

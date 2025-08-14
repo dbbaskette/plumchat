@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.baskettecase.plumchat</groupId>
+        <groupId>com.plumchat</groupId>
         <artifactId>plumchat</artifactId>
-        <version>0.0.1</version>
+        <version>0.1.0</version>
     </parent>
     <artifactId>mcp-mgmt-server</artifactId>
     <name>MCP Management Server</name>
@@ -43,6 +43,11 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

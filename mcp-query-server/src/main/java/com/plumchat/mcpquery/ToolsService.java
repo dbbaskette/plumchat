@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.mcpquery;
+package com.plumchat.mcpquery;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ import org.springframework.stereotype.Service;
 public class ToolsService {
 
     public record QueryResult(List<String> columns, List<List<String>> rows) {}
+
+    private static final Logger log = LoggerFactory.getLogger(ToolsService.class);
 
     @Tool(description = "Execute SQL against Greenplum/PostgreSQL and return rows")
     public QueryResult execute_sql(String host, int port, String database,
@@ -23,6 +27,8 @@ public class ToolsService {
                                    Integer timeoutSeconds,
                                    Integer maxRows) throws Exception {
         String url = "jdbc:postgresql://" + host + ":" + port + "/" + database;
+        // Avoid logging plaintext credentials. If needed in debug, mask them.
+        log.debug("Connecting to {} as user={} (password masked)", url, username);
         int effectiveFetch = fetchSize != null ? fetchSize : 200;
         int timeout = timeoutSeconds != null ? timeoutSeconds : 30;
         List<String> columns = new ArrayList<>();
@@ -36,6 +42,7 @@ public class ToolsService {
                 stmt.setMaxRows(maxRows);
             }
             try (ResultSet rs = stmt.executeQuery(sql)) {
+                log.info("Executing SQL (masked creds) for db={} host={} fetch={} timeout={} maxRows={}", database, host, effectiveFetch, timeout, maxRows);
                 int columnCount = rs.getMetaData().getColumnCount();
                 for (int i = 1; i <= columnCount; i++) {
                     columns.add(rs.getMetaData().getColumnLabel(i));

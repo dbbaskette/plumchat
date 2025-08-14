@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.host;
+package com.plumchat.host;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

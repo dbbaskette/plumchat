@@ -1,4 +1,4 @@
-package com.baskettecase.plumchat.host.api;
+package com.plumchat.host.api;
 
 import java.util.List;
 import org.springframework.http.MediaType;

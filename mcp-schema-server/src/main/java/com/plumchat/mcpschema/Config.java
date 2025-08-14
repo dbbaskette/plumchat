@@ -1,6 +1,6 @@
-package com.baskettecase.plumchat.mcpschema;
+package com.plumchat.mcpschema;
 
-import com.baskettecase.plumchat.mcpschema.connections.ConnectionsProperties;
+import com.plumchat.mcpschema.connections.ConnectionsProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
