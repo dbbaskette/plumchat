@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "mcp-server": {
+      "command": "java",
+      "args": [
+        "-Dspring.profiles.active=stdio",
+        "-jar",
+        "/Users/dbbaskette/Projects/mcp-server/target/mcp-server-0.0.1-SNAPSHOT.jar"
+      ]
+    }
+  }
+}
