@@ -1,0 +1,89 @@
+# Build output
+target/
+
+# IDE and editor configs
+.cursor.json
+.claude/
+.vscode/
+
+# Temp files
+temp/
+
+# Release scripts
+release.sh
+.release.conf
+
+# Prompt files
+prompt/
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Compiled Java classes
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Gemini-specific files
+.gemini.md
+.windsurf.json
+CLAUDE.md
+CURRENT.txt
+combined_prompt.md
+PROJECT*.md
+
+.release-exec
+src/main/resources/application-sse-works.properties
+
+# --- Added common ignores ---
+# OS files
+.DS_Store
+Thumbs.db
+
+# IntelliJ/IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+.factorypath
+
+# VSCode
+.vscode/
+
+# Build/compile outputs
+bin/
+out/
+
+# Patch/merge leftovers
+*.orig
+*.rej
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Environment files & secrets
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.pem
+*.crt
+*.key
+
+# Local-only Spring configs
+src/main/resources/application-*.local.properties
+src/main/resources/application-*.override.properties
+src/main/resources/*-secret.*

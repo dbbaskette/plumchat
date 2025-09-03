@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- STDIO Mode: Only log to file, NEVER to console -->
+    <!-- Console output interferes with MCP JSON protocol -->
+    
+    <!-- File appender for STDIO mode - use temp directory to avoid path issues -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${java.io.tmpdir}/mcp-server-stdio.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %5level --- [%15.15thread] %-40.40logger{39} : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- NO console appender for STDIO mode -->
+    
+    <!-- Root logger: only log to file -->
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+    
+    <!-- Spring AI MCP debug logging -->
+    <logger name="org.springframework.ai.mcp" level="DEBUG" />
+    
+    <!-- Application logging -->
+    <logger name="com.baskettecase" level="INFO" />
+    
+    <!-- Suppress Spring Boot startup noise -->
+    <logger name="org.springframework.boot" level="WARN" />
+    <logger name="org.springframework.web" level="WARN" />
+    <logger name="org.springframework.context" level="WARN" />
+</configuration>
