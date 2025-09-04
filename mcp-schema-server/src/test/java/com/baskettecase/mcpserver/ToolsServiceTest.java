@@ -1,7 +1,5 @@
 package com.baskettecase.mcpserver;
 
-import com.baskettecase.mcpserver.model.SchemaRequest;
-import com.baskettecase.mcpserver.model.TableRequest;
 import com.baskettecase.mcpserver.service.SchemaDiscoveryService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -83,7 +81,7 @@ class ToolsServiceTest {
 
     @Test
     void testGetTablesInSchema() throws Exception {
-        String result = toolsService.getTablesInSchema(new SchemaRequest("SALES"));
+        String result = toolsService.getTablesInSchema("SALES");
         
         assertNotNull(result);
         assertFalse(result.startsWith("Error"));
@@ -102,7 +100,7 @@ class ToolsServiceTest {
 
     @Test
     void testGetTableInfo() throws Exception {
-        String result = toolsService.getTableInfo(new TableRequest("SALES", "PRODUCTS"));
+        String result = toolsService.getTableInfo("SALES", "PRODUCTS");
         
         assertNotNull(result);
         assertFalse(result.startsWith("Error"));
@@ -127,25 +125,25 @@ class ToolsServiceTest {
 
     @Test
     void testGetTablesInSchemaEmptyName() {
-        String result = toolsService.getTablesInSchema(new SchemaRequest(""));
+        String result = toolsService.getTablesInSchema("");
         assertTrue(result.startsWith("Error: Schema name cannot be null or empty"));
         
-        result = toolsService.getTablesInSchema(new SchemaRequest(null));
+        result = toolsService.getTablesInSchema(null);
         assertTrue(result.startsWith("Error: Schema name cannot be null or empty"));
     }
 
     @Test
     void testGetTableInfoEmptyNames() {
-        String result = toolsService.getTableInfo(new TableRequest("", "products"));
+        String result = toolsService.getTableInfo("", "products");
         assertTrue(result.startsWith("Error: Schema name cannot be null or empty"));
         
-        result = toolsService.getTableInfo(new TableRequest("sales", ""));
+        result = toolsService.getTableInfo("sales", "");
         assertTrue(result.startsWith("Error: Table name cannot be null or empty"));
     }
 
     @Test
     void testGetTableInfoNotFound() {
-        String result = toolsService.getTableInfo(new TableRequest("SALES", "NONEXISTENT"));
+        String result = toolsService.getTableInfo("SALES", "NONEXISTENT");
         assertTrue(result.startsWith("Table not found: SALES.NONEXISTENT"));
     }
 }

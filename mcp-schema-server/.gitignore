@@ -61,4 +61,5 @@ PROJECT.md
 prompt/
 .windsurf.json
 CURRENT.txt
-README-CLAUDE-DESKTOP.md
+README-CLAUDE-DESKTOP.md*.yml
+*.properties

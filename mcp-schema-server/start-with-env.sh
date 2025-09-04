@@ -23,7 +23,7 @@ kill_existing_servers() {
     echo -e "${BLUE}🔍 Checking for existing MCP server processes...${NC}"
     
     # Find Java processes running our specific JAR file
-    local jar_name="mcp-schema-server-0.0.1.jar"
+    local jar_name="mcp-schema-server-0.0.3.jar"
     local existing_pids=$(ps aux | grep "$jar_name" | grep -v grep | awk '{print $2}')
     
     if [ -n "$existing_pids" ]; then
@@ -101,25 +101,28 @@ fi
 
 # Default transport mode
 TRANSPORT_MODE="sse"
-JAR_FILE="$SCRIPT_DIR/target/mcp-schema-server-0.0.1.jar"
+JAR_FILE="$SCRIPT_DIR/target/mcp-schema-server-0.0.3.jar"
+BUILD_PROJECT=false
 
 # Parse command line arguments
 for arg in "$@"; do
     case $arg in
         --sse)
             TRANSPORT_MODE="sse"
-            shift
             ;;
         --stdio)
             TRANSPORT_MODE="stdio"
-            shift
+            ;;
+        --build)
+            BUILD_PROJECT=true
             ;;
         -h|--help)
-            echo "Usage: $0 [--sse|--stdio]"
+            echo "Usage: $0 [--sse|--stdio|--build]"
             echo ""
             echo "Options:"
             echo "  --sse     Use Server-Sent Events transport (default, for web clients)"
             echo "  --stdio   Use Standard I/O transport (for Claude Desktop)"
+            echo "  --build   Force rebuild the project with 'mvn clean package'"
             echo ""
             echo "Environment variables are loaded from: $ENV_FILE"
             echo ""
@@ -137,10 +140,24 @@ for arg in "$@"; do
     esac
 done
 
-# Check if JAR exists
+if [ ! -f "$JAR_FILE" ] || [ "$BUILD_PROJECT" = true ]; then
+    echo -e "${BLUE}🔨 Building project with Maven...${NC}"
+    echo -e "  Running: ${YELLOW}mvn clean package -DskipTests${NC}"
+    echo -e ""
+    
+    cd "$SCRIPT_DIR"
+    if mvn clean package -DskipTests; then
+        echo -e "${GREEN}✓ Build completed successfully${NC}"
+        echo -e ""
+    else
+        echo -e "${RED}❌ Build failed${NC}"
+        exit 1
+    fi
+fi
+
+# Check if JAR exists after build
 if [ ! -f "$JAR_FILE" ]; then
-    echo -e "${RED}❌ JAR file not found: $JAR_FILE${NC}"
-    echo -e "${YELLOW}💡 Run: mvn clean package -DskipTests${NC}"
+    echo -e "${RED}❌ JAR file not found after build: $JAR_FILE${NC}"
     exit 1
 fi
 
