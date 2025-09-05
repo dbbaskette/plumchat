@@ -105,6 +105,8 @@ You can interact with PlumChat using natural language. For example:
 
 PlumChat will then generate the appropriate SQL query, show it to you for approval, and then display the results.
 
+![PlumChat UI](assets/plumchat-ui.png)
+
 ## 📂 Project Structure
 
 ```

@@ -1700,3 +1700,180 @@ java.lang.ClassNotFoundException: org.springframework.security.oauth2.client.Cli
 2025-09-05 13:24:47.604 [http-nio-8090-exec-1] INFO  c.b.plumchat.service.ChatService - Generated AI response using ChatClient with auto-configured MCP tools
 2025-09-05 13:42:22.949 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
 2025-09-05 13:42:22.962 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-05 13:53:54.477 [main] INFO  c.b.plumchat.PlumChatApplication - Starting PlumChatApplication v0.1.0 using Java 21.0.8 with PID 11988 (/Users/dbbaskette/Projects/plumchat/plumchat-client/target/plumchat-client-0.1.0.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat/plumchat-client)
+2025-09-05 13:53:54.479 [main] INFO  c.b.plumchat.PlumChatApplication - The following 1 profile is active: "local"
+2025-09-05 13:53:54.972 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http)
+2025-09-05 13:53:54.982 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-05 13:53:54.982 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-09-05 13:53:54.991 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-05 13:53:54.991 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 489 ms
+2025-09-05 13:53:55.322 [HttpClient-1-Worker-0] INFO  i.m.client.McpAsyncClient - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[completions=CompletionCapabilities[], experimental=null, logging=LoggingCapabilities[], prompts=PromptCapabilities[listChanged=true], resources=ResourceCapabilities[subscribe=false, listChanged=true], tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server, version=1.0.0] and Instructions null
+2025-09-05 13:53:55.340 [HttpClient-1-Worker-1] INFO  i.m.client.McpAsyncClient - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[completions=CompletionCapabilities[], experimental=null, logging=LoggingCapabilities[], prompts=PromptCapabilities[listChanged=true], resources=ResourceCapabilities[subscribe=false, listChanged=true], tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-query-server, version=1.0.0] and Instructions null
+2025-09-05 13:53:55.363 [main] DEBUG o.s.a.m.t.a.ToolCallingAutoConfiguration - Cannot load class
+java.lang.ClassNotFoundException: org.springframework.security.oauth2.client.ClientAuthorizationException
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
+	at org.springframework.ai.model.tool.autoconfigure.ToolCallingAutoConfiguration.getClassOrNull(ToolCallingAutoConfiguration.java:128)
+	at org.springframework.ai.model.tool.autoconfigure.ToolCallingAutoConfiguration.toolExecutionExceptionProcessor(ToolCallingAutoConfiguration.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1739)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:357)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1224)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1224)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
+	at com.baskettecase.plumchat.PlumChatApplication.main(PlumChatApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+2025-09-05 13:53:55.401 [main] INFO  c.b.plumchat.config.ChatConfig - Creating ChatClient with ToolCallbackProvider and externalized system prompt
+2025-09-05 13:53:55.408 [main] INFO  c.b.plumchat.service.ChatService - ChatService initialized with Spring AI ChatClient and externalized prompts
+2025-09-05 13:53:55.427 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-09-05 13:53:55.557 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-05 13:53:55.575 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/'
+2025-09-05 13:53:55.585 [main] INFO  c.b.plumchat.PlumChatApplication - Started PlumChatApplication in 1.284 seconds (process running for 1.451)
+2025-09-05 13:53:55.615 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🚀 PlumChat Client started successfully!
+2025-09-05 13:53:55.615 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🌐 Client running on port: 8090
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🎯 UI available at: http://localhost:8090
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🔍 MCP Client Configuration:
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Enabled: true
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Name: plumchat-client
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Version: 1.0.0
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Type: SYNC
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Request Timeout: 20s
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Tool Callback Enabled: true
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🔗 MCP Server Connections:
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Schema Server: http://localhost:8080
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Schema Server SSE: /sse
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Query Server: http://localhost:8081
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Query Server SSE: /sse
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🛠️  MCP Tool Auto-Discovery:
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Spring AI will auto-discover tools from connected MCP servers
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Available tools depend on active MCP server connections
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    Tools are dynamically loaded and integrated into ChatClient
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🌟 PlumChat initialization complete!
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService - 💡 Expected MCP tools from connected servers:
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    📊 Schema Discovery Tools (from schema-server on port 8080):
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - getAllSchemas: Get all database schemas
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - getTablesInSchema: Get tables in a specific schema
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - getTableInfo: Get detailed table information
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - testMcpConnection: Test MCP server connectivity
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -    🔍 Query Execution Tools (from query-server on port 8081 - if configured):
+2025-09-05 13:53:55.616 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - executeQuery: Execute SELECT queries against the database
+2025-09-05 13:53:55.617 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - explainQuery: Get execution plan for a query
+2025-09-05 13:53:55.617 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - countTableRows: Count rows in a specified table
+2025-09-05 13:53:55.617 [main] INFO  c.b.p.s.McpToolDiscoveryService -       - testConnection: Test database connectivity
+2025-09-05 13:53:55.617 [main] INFO  c.b.p.s.McpToolDiscoveryService - 🎉 PlumChat is ready to assist with Greenplum database operations!
+2025-09-05 13:53:57.575 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-05 13:53:57.575 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-05 13:53:57.576 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-05 13:54:00.566 [http-nio-8090-exec-1] INFO  c.b.p.controller.ChatController - Received chat message: show me the first 10 people in the customers table (schema: public)
+2025-09-05 13:54:00.566 [http-nio-8090-exec-1] INFO  c.b.plumchat.service.ChatService - Processing message for session 42ce69cc-7158-4544-83f5-c1681623e780: show me the first 10 people in the customers table (schema: public)
+2025-09-05 13:54:05.427 [http-nio-8090-exec-1] DEBUG o.s.a.m.t.DefaultToolCallingManager - Executing tool call: plumchat_client_schema_server_getTableInfo
+2025-09-05 13:54:09.571 [http-nio-8090-exec-1] DEBUG o.s.a.m.t.DefaultToolCallingManager - Executing tool call: plumchat_client_query_server_executeQuery
+2025-09-05 13:54:19.413 [http-nio-8090-exec-1] INFO  c.b.plumchat.service.ChatService - Generated AI response using ChatClient with auto-configured MCP tools

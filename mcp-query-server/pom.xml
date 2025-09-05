@@ -7,11 +7,11 @@
     <parent>
         <groupId>com.baskettecase.plumchat</groupId>
         <artifactId>plumchat-parent</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.1</version>
     </parent>
 
     <artifactId>mcp-query-server</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <name>MCP Query Server</name>
     <description>Spring AI MCP Server for executing database queries and data analysis.</description>
 
