@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import com.baskettecase.plumchat.service.ChatService;
 
 import java.util.Map;
 
@@ -14,6 +15,11 @@ import java.util.Map;
 public class StatusController {
 
     private final RestTemplate restTemplate = new RestTemplate();
+    private final ChatService chatService;
+
+    public StatusController(ChatService chatService) {
+        this.chatService = chatService;
+    }
 
     @GetMapping("/health")
     public Map<String, Object> getHealth() {
@@ -108,5 +114,13 @@ public class StatusController {
                 "note", "Cannot connect to MCP server at " + serverUrl
             );
         }
+    }
+
+    @GetMapping("/welcome")
+    public Map<String, Object> getWelcomeMessage() {
+        return Map.of(
+            "message", chatService.getWelcomeMessage(),
+            "source", "externalized-property"
+        );
     }
 }

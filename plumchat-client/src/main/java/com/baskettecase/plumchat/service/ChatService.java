@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -19,9 +20,15 @@ public class ChatService {
     private final ChatClient chatClient;
     private final Map<String, List<Message>> sessionHistory = new ConcurrentHashMap<>();
 
+    @Value("${plumchat.prompts.error}")
+    private String errorPrompt;
+
+    @Value("${plumchat.prompts.welcome}")
+    private String welcomePrompt;
+
     public ChatService(ChatClient chatClient) {
         this.chatClient = chatClient;
-        logger.info("ChatService initialized with Spring AI ChatClient and MCP tools auto-configuration");
+        logger.info("ChatService initialized with Spring AI ChatClient and externalized prompts");
     }
 
     public ChatResponse processMessage(ChatRequest request) {
@@ -53,7 +60,7 @@ public class ChatService {
         } catch (Exception e) {
             logger.error("Error processing message", e);
             return new ChatResponse(
-                "I apologize, but I encountered an error processing your request. Please try again.",
+                errorPrompt,
                 sessionId,
                 "ERROR",
                 List.of("Show me all schemas", "What tables are available?")
@@ -104,5 +111,9 @@ public class ChatService {
         }
         
         return suggestions;
+    }
+
+    public String getWelcomeMessage() {
+        return welcomePrompt;
     }
 }
