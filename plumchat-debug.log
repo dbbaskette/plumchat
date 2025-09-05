@@ -1,0 +1,415 @@
+🌱 PlumChat Client Management Script
+===================================
+Starting at: Thu Sep  4 09:45:48 EDT 2025
+
+🔍 Looking for existing PlumChat processes...
+🛑 Killing existing PlumChat processes: 2630
+💀 Force killing remaining processes: 2630
+✅ All PlumChat processes terminated
+
+🔨 Building PlumChat Client...
+==============================
+📦 Running Maven clean package...
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< com.baskettecase.plumchat:plumchat-client >--------------
+[INFO] Building PlumChat Client 0.0.3
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ plumchat-client ---
+[INFO] Deleting /Users/dbbaskette/Projects/plumchat/plumchat-client/target
+[INFO] 
+[INFO] --- frontend:1.15.0:install-node-and-npm (install node and npm) @ plumchat-client ---
+[INFO] Node v20.10.0 is already installed.
+[INFO] NPM 10.2.5 is already installed.
+[INFO] 
+[INFO] --- frontend:1.15.0:npm (npm install) @ plumchat-client ---
+[INFO] Running 'npm install' in /Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/frontend
+[INFO] 
+[INFO] up to date, audited 330 packages in 510ms
+[INFO] 
+[INFO] 147 packages are looking for funding
+[INFO]   run `npm fund` for details
+[INFO] 
+[INFO] 5 moderate severity vulnerabilities
+[INFO] 
+[INFO] To address all issues (including breaking changes), run:
+[INFO]   npm audit fix --force
+[INFO] 
+[INFO] Run `npm audit` for details.
+[INFO] 
+[INFO] --- frontend:1.15.0:npm (npm run build) @ plumchat-client ---
+[INFO] Running 'npm run build' in /Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/frontend
+[INFO] 
+[INFO] > plumchat-frontend@0.0.3 build
+[INFO] > vite build
+[INFO] 
+[INFO] vite v5.4.19 building for production...
+[INFO] transforming...
+[INFO] ✓ 3095 modules transformed.
+[INFO] rendering chunks...
+[INFO] computing gzip size...
+[INFO] dist/index.html                   0.93 kB │ gzip:   0.47 kB
+[INFO] dist/static/index-E3IvsLk2.css   22.84 kB │ gzip:   4.69 kB
+[INFO] dist/static/index-E3IvsLk2.css   22.84 kB │ gzip:   4.69 kB
+[INFO] dist/static/table-DiRdljZn.js    54.14 kB │ gzip:  14.44 kB
+[INFO] (!) Some chunks are larger than 500 kB after minification. Consider:
+[INFO] dist/static/vendor-Q3K9tvtn.js  141.39 kB │ gzip:  45.45 kB
+[INFO] - Using dynamic import() to code-split the application
+[INFO] dist/static/index-CDNgBJrj.js   894.94 kB │ gzip: 311.14 kB
+[INFO] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[INFO] ✓ built in 1.94s
+[INFO] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ plumchat-client ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 19 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ plumchat-client ---
+[INFO] Recompiling the module because of added or removed source files.
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 15 source files with javac [debug target 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-frontend-build) @ plumchat-client ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 5 resources from src/main/frontend/dist to src/main/resources/static
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ plumchat-client ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/dbbaskette/Projects/plumchat/plumchat-client/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ plumchat-client ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ plumchat-client ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ plumchat-client ---
+[INFO] Building jar: /Users/dbbaskette/Projects/plumchat/plumchat-client/target/plumchat-client-0.0.3.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.4:repackage (default) @ plumchat-client ---
+[INFO] Replacing main artifact /Users/dbbaskette/Projects/plumchat/plumchat-client/target/plumchat-client-0.0.3.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/dbbaskette/Projects/plumchat/plumchat-client/target/plumchat-client-0.0.3.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.873 s
+[INFO] Finished at: 2025-09-04T09:45:56-04:00
+[INFO] ------------------------------------------------------------------------
+✅ Build completed successfully!
+
+🚀 Starting PlumChat Client...
+=============================
+📄 Loading environment variables from .env file...
+✅ Environment variables loaded
+📝 JAR file found: 44M plumchat-client/target/plumchat-client-0.0.3.jar
+✅ OpenAI API key configured
+
+🌐 Starting PlumChat on http://localhost:8090
+💡 Press Ctrl+C to stop
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-09-04T09:45:57.214-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.PlumChatApplication        : Starting PlumChatApplication using Java 21.0.8 with PID 3668 (/Users/dbbaskette/Projects/plumchat/plumchat-client/target/plumchat-client-0.0.3.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat/plumchat-client)
+2025-09-04T09:45:57.215-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.mcpclient.PlumChatApplication        : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-04T09:45:57.215-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.PlumChatApplication        : The following 1 profile is active: "sse"
+2025-09-04T09:45:57.873-04:00  INFO 3668 --- [plumchat-client] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2025-09-04T09:45:57.879-04:00  INFO 3668 --- [plumchat-client] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T09:45:57.879-04:00  INFO 3668 --- [plumchat-client] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-04T09:45:57.891-04:00  INFO 3668 --- [plumchat-client] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T09:45:57.891-04:00  INFO 3668 --- [plumchat-client] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 658 ms
+2025-09-04T09:45:58.178-04:00 ERROR 3668 --- [plumchat-client] [           main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-09-04T09:45:58.292-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-0","result":{"protocolVersion":"2024-11-05","capabilities":{"completions":{},"logging":{},"prompts":{"listChanged":true},"resources":{"subscribe":false,"listChanged":true},"tools":{"listChanged":true}},"serverInfo":{"name":"mcp-server","version":"1.0.0"}}}
+2025-09-04T09:45:58.308-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-0, result={protocolVersion=2024-11-05, capabilities={completions={}, logging={}, prompts={listChanged=true}, resources={subscribe=false, listChanged=true}, tools={listChanged=true}}, serverInfo={name=mcp-server, version=1.0.0}}, error=null]
+2025-09-04T09:45:58.314-04:00  INFO 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.client.McpAsyncClient                : Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[completions=CompletionCapabilities[], experimental=null, logging=LoggingCapabilities[], prompts=PromptCapabilities[listChanged=true], resources=ResourceCapabilities[subscribe=false, listChanged=true], tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server, version=1.0.0] and Instructions null
+2025-09-04T09:45:58.320-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:45:58.324-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:45:58.329-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:45:58.330-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-1","result":{"tools":[{"name":"getTableInfo","description":"Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema"},"arg1":{"type":"string","description":"The name of the table"}},"required":["arg0","arg1"],"additionalProperties":false}},{"name":"getAllSchemas","description":"Get all database schemas with their table names. Returns comprehensive schema information for database exploration.","inputSchema":{"type":"object","properties":{},"required":[],"additionalProperties":false}},{"name":"getTablesInSchema","description":"Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema to query"}},"required":["arg0"],"additionalProperties":false}}]}}
+2025-09-04T09:45:58.331-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-1, result={tools=[{name=getTableInfo, description=Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema}, arg1={type=string, description=The name of the table}}, required=[arg0, arg1], additionalProperties=false}}, {name=getAllSchemas, description=Get all database schemas with their table names. Returns comprehensive schema information for database exploration., inputSchema={type=object, properties={}, required=[], additionalProperties=false}}, {name=getTablesInSchema, description=Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema to query}}, required=[arg0], additionalProperties=false}}]}, error=null]
+2025-09-04T09:45:58.342-04:00 DEBUG 3668 --- [plumchat-client] [           main] o.s.a.m.t.a.ToolCallingAutoConfiguration : Cannot load class
+
+java.lang.ClassNotFoundException: org.springframework.security.oauth2.client.ClientAuthorizationException
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593) ~[na:na]
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[plumchat-client-0.0.3.jar:na]
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[plumchat-client-0.0.3.jar:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:534) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:513) ~[na:na]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321) ~[spring-core-6.2.9.jar!/:6.2.9]
+	at org.springframework.ai.model.tool.autoconfigure.ToolCallingAutoConfiguration.getClassOrNull(ToolCallingAutoConfiguration.java:128) ~[spring-ai-autoconfigure-model-tool-1.0.1.jar!/:1.0.1]
+	at org.springframework.ai.model.tool.autoconfigure.ToolCallingAutoConfiguration.toolExecutionExceptionProcessor(ToolCallingAutoConfiguration.java:87) ~[spring-ai-autoconfigure-model-tool-1.0.1.jar!/:1.0.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar!/:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar!/:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar!/:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar!/:3.5.4]
+	at com.baskettecase.mcpclient.PlumChatApplication.main(PlumChatApplication.java:10) ~[!/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[plumchat-client-0.0.3.jar:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[plumchat-client-0.0.3.jar:na]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[plumchat-client-0.0.3.jar:na]
+
+2025-09-04T09:45:58.374-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.config.ChatClientConfig    : Creating ChatClient with OpenAI model - functions will be auto-discovered from Spring context
+2025-09-04T09:45:58.438-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Testing MCP server connections...
+2025-09-04T09:45:58.458-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : ✅ schema server connected at http://localhost:8080/actuator/health
+2025-09-04T09:45:58.460-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8081/actuator/health: null
+2025-09-04T09:45:58.461-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8081/health: null
+2025-09-04T09:45:58.461-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8081/api/status/health: null
+2025-09-04T09:45:58.462-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8081/: null
+2025-09-04T09:45:58.462-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8081: null
+2025-09-04T09:45:58.462-04:00  WARN 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : ❌ query server not responding at http://localhost:8081
+2025-09-04T09:45:58.463-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8082/actuator/health: null
+2025-09-04T09:45:58.464-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8082/health: null
+2025-09-04T09:45:58.464-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8082/api/status/health: null
+2025-09-04T09:45:58.465-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8082/: null
+2025-09-04T09:45:58.466-04:00 DEBUG 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : Connection test failed for http://localhost:8082: null
+2025-09-04T09:45:58.466-04:00  WARN 3668 --- [plumchat-client] [           main] c.b.m.service.McpConnectionService       : ❌ mgmt server not responding at http://localhost:8082
+2025-09-04T09:45:58.470-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-2","result":{"tools":[{"name":"getTableInfo","description":"Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema"},"arg1":{"type":"string","description":"The name of the table"}},"required":["arg0","arg1"],"additionalProperties":false}},{"name":"getAllSchemas","description":"Get all database schemas with their table names. Returns comprehensive schema information for database exploration.","inputSchema":{"type":"object","properties":{},"required":[],"additionalProperties":false}},{"name":"getTablesInSchema","description":"Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema to query"}},"required":["arg0"],"additionalProperties":false}}]}}
+2025-09-04T09:45:58.470-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-2, result={tools=[{name=getTableInfo, description=Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema}, arg1={type=string, description=The name of the table}}, required=[arg0, arg1], additionalProperties=false}}, {name=getAllSchemas, description=Get all database schemas with their table names. Returns comprehensive schema information for database exploration., inputSchema={type=object, properties={}, required=[], additionalProperties=false}}, {name=getTablesInSchema, description=Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema to query}}, required=[arg0], additionalProperties=false}}]}, error=null]
+2025-09-04T09:45:58.471-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.service.SchemaToolService  : SchemaToolService initialized with MCP Tool Provider - 3 tools discovered
+2025-09-04T09:45:58.471-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:45:58.471-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.service.SchemaToolService  :   - Tool: spring_ai_mcp_client_schema_getTableInfo (Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships.)
+2025-09-04T09:45:58.471-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.service.SchemaToolService  :   - Tool: spring_ai_mcp_client_schema_getAllSchemas (Get all database schemas with their table names. Returns comprehensive schema information for database exploration.)
+2025-09-04T09:45:58.471-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.service.SchemaToolService  :   - Tool: spring_ai_mcp_client_schema_getTablesInSchema (Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.)
+2025-09-04T09:45:58.500-04:00  INFO 3668 --- [plumchat-client] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-04T09:45:58.567-04:00  INFO 3668 --- [plumchat-client] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-09-04T09:45:58.580-04:00  WARN 3668 --- [plumchat-client] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cda9cefd-39d6-4793-a13f-8b5774fc5747
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T09:45:58.585-04:00  INFO 3668 --- [plumchat-client] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T09:45:58.736-04:00  INFO 3668 --- [plumchat-client] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2025-09-04T09:45:58.747-04:00  INFO 3668 --- [plumchat-client] [           main] c.b.mcpclient.PlumChatApplication        : Started PlumChatApplication in 1.722 seconds (process running for 1.916)
+2025-09-04T09:46:13.270-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T09:46:13.270-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T09:46:13.271-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-04T09:46:13.607-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-9] c.b.mcpclient.service.LlmStatusService   : Performing LLM health check...
+2025-09-04T09:46:13.607-04:00 DEBUG 3668 --- [plumchat-client] [io-8090-exec-10] c.b.mcpclient.service.LlmStatusService   : Performing LLM health check...
+2025-09-04T09:46:14.928-04:00 DEBUG 3668 --- [plumchat-client] [io-8090-exec-10] c.b.mcpclient.service.LlmStatusService   : LLM health check result: HEALTHY
+2025-09-04T09:46:15.081-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-9] c.b.mcpclient.service.LlmStatusService   : LLM health check result: HEALTHY
+2025-09-04T09:50:04.806-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-7] c.b.mcpclient.controller.ChatController  : Received chat message: Show me all database schemas
+2025-09-04T09:50:04.807-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-7] c.b.mcpclient.service.ChatService        : Direct schema request detected, calling getAllSchemas MCP tool
+2025-09-04T09:50:04.833-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:50:04.834-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-3","result":{"tools":[{"name":"getTableInfo","description":"Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema"},"arg1":{"type":"string","description":"The name of the table"}},"required":["arg0","arg1"],"additionalProperties":false}},{"name":"getAllSchemas","description":"Get all database schemas with their table names. Returns comprehensive schema information for database exploration.","inputSchema":{"type":"object","properties":{},"required":[],"additionalProperties":false}},{"name":"getTablesInSchema","description":"Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema to query"}},"required":["arg0"],"additionalProperties":false}}]}}
+2025-09-04T09:50:04.834-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-3, result={tools=[{name=getTableInfo, description=Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema}, arg1={type=string, description=The name of the table}}, required=[arg0, arg1], additionalProperties=false}}, {name=getAllSchemas, description=Get all database schemas with their table names. Returns comprehensive schema information for database exploration., inputSchema={type=object, properties={}, required=[], additionalProperties=false}}, {name=getTablesInSchema, description=Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema to query}}, required=[arg0], additionalProperties=false}}]}, error=null]
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  : Looking for tool: getAllSchemas
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  : Available tools:
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getTableInfo -> Short: getTableInfo
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getAllSchemas -> Short: getAllSchemas
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getTablesInSchema -> Short: getTablesInSchema
+2025-09-04T09:50:04.835-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  : Found tool by short name: getAllSchemas -> spring_ai_mcp_client_schema_getAllSchemas
+2025-09-04T09:50:04.836-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  : Calling MCP tool: getAllSchemas with parameters: {}
+2025-09-04T09:50:05.974-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-4","result":{"content":[{"type":"text","text":"\"Error retrieving schemas: The connection attempt failed.\""}],"isError":false}}
+2025-09-04T09:50:05.975-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-4, result={content=[{type=text, text="Error retrieving schemas: The connection attempt failed."}], isError=false}, error=null]
+2025-09-04T09:50:06.000-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:50:06.000-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-1] c.b.mcpclient.service.SchemaToolService  : MCP tool getAllSchemas completed successfully
+2025-09-04T09:50:47.964-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-2] c.b.mcpclient.service.LlmStatusService   : Performing LLM health check...
+2025-09-04T09:50:48.758-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-2] c.b.mcpclient.service.LlmStatusService   : LLM health check result: HEALTHY
+2025-09-04T09:51:21.563-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-2] c.b.mcpclient.service.LlmStatusService   : Performing LLM health check...
+2025-09-04T09:51:22.212-04:00 DEBUG 3668 --- [plumchat-client] [nio-8090-exec-2] c.b.mcpclient.service.LlmStatusService   : LLM health check result: HEALTHY
+2025-09-04T09:51:40.087-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-1] c.b.mcpclient.controller.ChatController  : Received chat message: show me all database schemas
+2025-09-04T09:51:40.088-04:00  INFO 3668 --- [plumchat-client] [nio-8090-exec-1] c.b.mcpclient.service.ChatService        : Direct schema request detected, calling getAllSchemas MCP tool
+2025-09-04T09:51:40.109-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-5","result":{"tools":[{"name":"getTableInfo","description":"Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema"},"arg1":{"type":"string","description":"The name of the table"}},"required":["arg0","arg1"],"additionalProperties":false}},{"name":"getAllSchemas","description":"Get all database schemas with their table names. Returns comprehensive schema information for database exploration.","inputSchema":{"type":"object","properties":{},"required":[],"additionalProperties":false}},{"name":"getTablesInSchema","description":"Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.","inputSchema":{"type":"object","properties":{"arg0":{"type":"string","description":"The name of the database schema to query"}},"required":["arg0"],"additionalProperties":false}}]}}
+2025-09-04T09:51:40.110-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-5, result={tools=[{name=getTableInfo, description=Get detailed information about a specific table. Returns comprehensive column information including data types, constraints, nullable status, and relationships., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema}, arg1={type=string, description=The name of the table}}, required=[arg0, arg1], additionalProperties=false}}, {name=getAllSchemas, description=Get all database schemas with their table names. Returns comprehensive schema information for database exploration., inputSchema={type=object, properties={}, required=[], additionalProperties=false}}, {name=getTablesInSchema, description=Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata., inputSchema={type=object, properties={arg0={type=string, description=The name of the database schema to query}}, required=[arg0], additionalProperties=false}}]}, error=null]
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  : Looking for tool: getAllSchemas
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  : Available tools:
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getTableInfo -> Short: getTableInfo
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getAllSchemas -> Short: getAllSchemas
+2025-09-04T09:51:40.111-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  :   - Full: spring_ai_mcp_client_schema_getTablesInSchema -> Short: getTablesInSchema
+2025-09-04T09:51:40.112-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  : Found tool by short name: getAllSchemas -> spring_ai_mcp_client_schema_getAllSchemas
+2025-09-04T09:51:40.112-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  : Calling MCP tool: getAllSchemas with parameters: {}
+2025-09-04T09:51:41.126-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] io.modelcontextprotocol.spec.McpSchema   : Received JSON message: {"jsonrpc":"2.0","id":"f33d2f6c-6","result":{"content":[{"type":"text","text":"\"Error retrieving schemas: The connection attempt failed.\""}],"isError":false}}
+2025-09-04T09:51:41.127-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.spec.McpClientSession                : Received Response: JSONRPCResponse[jsonrpc=2.0, id=f33d2f6c-6, result={content=[{type=text, text="Error retrieving schemas: The connection attempt failed."}], isError=false}, error=null]
+2025-09-04T09:51:41.127-04:00 DEBUG 3668 --- [plumchat-client] [onPool-worker-2] c.b.mcpclient.service.SchemaToolService  : MCP tool getAllSchemas completed successfully
+2025-09-04T09:51:41.128-04:00 DEBUG 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Message sent successfully
+2025-09-04T09:52:43.790-04:00 ERROR 3668 --- [plumchat-client] [ctor-http-nio-2] i.m.c.t.WebFluxSseClientTransport        : Fatal SSE error, not retrying: 200 OK from GET http://localhost:8080/sse, but response failed with cause: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response
+2025-09-04T09:52:43.791-04:00 ERROR 3668 --- [plumchat-client] [ctor-http-nio-2] reactor.core.publisher.Operators         : Operator called default onErrorDropped
+
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.springframework.web.reactive.function.client.WebClientResponseException: 200 OK from GET http://localhost:8080/sse, but response failed with cause: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response
+Caused by: org.springframework.web.reactive.function.client.WebClientResponseException: 200 OK from GET http://localhost:8080/sse, but response failed with cause: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response
+	at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:337) ~[spring-webflux-6.2.9.jar!/:6.2.9]
+	at org.springframework.web.reactive.function.client.DefaultClientResponse.lambda$createException$1(DefaultClientResponse.java:214) ~[spring-webflux-6.2.9.jar!/:6.2.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onError(FluxOnErrorReturn.java:199) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onError(FluxDefaultIfEmpty.java:156) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onError(FluxOnAssembly.java:544) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onError(FluxMapFuseable.java:142) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onError(FluxMapFuseable.java:340) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onError(FluxFilterFuseable.java:382) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onError(MonoCollect.java:135) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.netty.channel.FluxReceive.startReceiver(FluxReceive.java:175) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.netty.channel.FluxReceive.subscribe(FluxReceive.java:145) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:68) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.netty.ByteBufFlux.subscribe(ByteBufFlux.java:340) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onError(FluxOnAssembly.java:544) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onError(FluxConcatMapNoPrefetch.java:221) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onError(FluxBufferPredicate.java:346) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onError(FluxPeekFuseable.java:553) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onError(FluxMapFuseable.java:340) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onError(FluxDoFinally.java:119) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onError(FluxConcatArray.java:186) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drainAsync(FluxFlattenIterable.java:351) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drain(FluxFlattenIterable.java:724) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.onError(FluxFlattenIterable.java:263) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.8.jar!/:3.7.8]
+	at reactor.netty.channel.FluxReceive.terminateReceiver(FluxReceive.java:478) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:273) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.netty.channel.FluxReceive.onInboundError(FluxReceive.java:466) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.netty.channel.ChannelOperations.onInboundError(ChannelOperations.java:526) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at reactor.netty.http.client.HttpClientOperations.onInboundClose(HttpClientOperations.java:344) ~[reactor-netty-http-1.2.8.jar!/:1.2.8]
+	at reactor.netty.channel.ChannelOperationsHandler.channelInactive(ChannelOperationsHandler.java:73) ~[reactor-netty-core-1.2.8.jar!/:1.2.8]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.handler.codec.http.HttpContentDecoder.channelInactive(HttpContentDecoder.java:235) ~[netty-codec-http-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelInactive(CombinedChannelDuplexHandler.java:418) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:412) ~[netty-codec-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:377) ~[netty-codec-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.handler.codec.http.HttpClientCodec$Decoder.channelInactive(HttpClientCodec.java:410) ~[netty-codec-http-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelInactive(CombinedChannelDuplexHandler.java:221) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1352) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:850) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:811) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566) ~[netty-transport-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar!/:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Body from GET http://localhost:8080/sse [DefaultClientResponse]
+	*__checkpoint ⇢ Body from GET http://localhost:8080/sse [DefaultClientResponse]
+Original Stack Trace:
+
+2025-09-04T09:53:03.889-04:00  INFO 3668 --- [plumchat-client] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T09:53:03.893-04:00  INFO 3668 --- [plumchat-client] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+./run-plumchat.sh: line 77:  3668 Killed: 9               java -jar target/plumchat-client-0.0.3.jar

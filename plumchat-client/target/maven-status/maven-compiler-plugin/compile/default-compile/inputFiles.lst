@@ -1,0 +1,8 @@
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/PlumChatApplication.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/config/ChatConfig.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/controller/ChatController.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/controller/StatusController.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/controller/WebController.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/model/ChatRequest.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/model/ChatResponse.java
+/Users/dbbaskette/Projects/plumchat/plumchat-client/src/main/java/com/baskettecase/plumchat/service/ChatService.java
