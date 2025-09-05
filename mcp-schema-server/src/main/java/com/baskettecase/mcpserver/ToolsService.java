@@ -54,7 +54,7 @@ public class ToolsService {
      * @param schemaName The name of the schema to explore
      * @return JSON string containing detailed table information including columns, data types, and constraints
      */
-    @Tool(description = "Get detailed information about all tables in a specific schema. Includes columns, data types, primary keys, foreign keys, and table metadata.")
+    @Tool(description = "Get a list of all tables and views in a specific schema, along with their types (e.g., 'TABLE', 'VIEW'). This is useful for discovering the contents of a schema before getting detailed information about a specific table.")
     public String getTablesInSchema(
         @org.springframework.ai.tool.annotation.ToolParam(description = "The name of the database schema to query") String schemaName) {
         logger.info("🔧 MCP Tool called: getTablesInSchema(schemaName='{}')", schemaName);

@@ -13,7 +13,7 @@
     
     <groupId>com.baskettecase.plumchat</groupId>
     <artifactId>plumchat-client</artifactId>
-    <version>0.0.6</version>
+    <version>0.1.0</version>
     <name>PlumChat Client</name>
     <description>PlumChat AI Client with Spring AI MCP Integration</description>
     

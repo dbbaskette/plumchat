@@ -98,10 +98,10 @@ start_plumchat() {
     # Load environment variables
     load_env
     
-    # Check if JAR exists
-    JAR_FILE="plumchat-client/target/plumchat-client-0.0.5.jar"
-    if [ ! -f "$JAR_FILE" ]; then
-        echo "❌ JAR file not found: $JAR_FILE"
+    # Find the JAR file dynamically
+    JAR_FILE=$(find plumchat-client/target -name "plumchat-client-*.jar" -not -name "*.original" | head -1)
+    if [ -z "$JAR_FILE" ] || [ ! -f "$JAR_FILE" ]; then
+        echo "❌ No JAR file found in plumchat-client/target/"
         echo "Please run the build first."
         exit 1
     fi
@@ -128,7 +128,7 @@ start_plumchat() {
     
     # Start the application
     cd plumchat-client
-    java -jar target/plumchat-client-0.0.5.jar
+    java -jar target/$(basename $JAR_FILE)
 }
 
 # Main execution
@@ -178,8 +178,8 @@ main() {
     fi
     
     # Step 2: Build if needed or forced
-    JAR_FILE="plumchat-client/target/plumchat-client-0.0.5.jar"
-    if [ "$FORCE_BUILD" = true ] || [ ! -f "$JAR_FILE" ]; then
+    JAR_FILE=$(find plumchat-client/target -name "plumchat-client-*.jar" -not -name "*.original" | head -1)
+    if [ "$FORCE_BUILD" = true ] || [ -z "$JAR_FILE" ] || [ ! -f "$JAR_FILE" ]; then
         build_plumchat
     else
         echo "ℹ️  JAR file exists, skipping build (use --build to force rebuild)"

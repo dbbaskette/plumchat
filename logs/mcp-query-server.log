@@ -1,0 +1,226 @@
+2025-09-05 12:42:30.734 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 91422 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 12:42:30.735 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 12:42:30.736 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 12:42:31.448 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 12:42:31.506 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 12:42:31.536 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 12:42:31.537 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 12:42:31.537 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 12:42:31.537 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 12:42:31.681 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8081 (http)
+2025-09-05 12:42:31.690 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.149 seconds (process running for 1.339)
+2025-09-05 12:44:12.508 [boundedElastic-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 12:44:13.150 [boundedElastic-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5eca154
+2025-09-05 12:44:13.151 [boundedElastic-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 12:52:51.564 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 95182 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 12:52:51.565 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 12:52:51.565 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 12:52:52.262 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 12:52:52.316 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 12:52:52.346 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 12:52:52.346 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 12:52:52.347 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 12:52:52.347 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 12:52:54.543 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-09-05 12:52:54.564 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-05 12:52:54.571 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2025-09-05 12:53:08.623 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-05 12:53:08.624 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-09-05 12:53:10.703 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-05 12:53:10.705 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-05 12:53:12.834 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 95601 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 12:53:12.835 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 12:53:12.835 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 12:53:13.569 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 12:53:13.685 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 12:53:13.741 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 12:53:13.741 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 12:53:13.741 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 12:53:13.741 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 12:53:13.873 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8081 (http)
+2025-09-05 12:53:13.882 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.245 seconds (process running for 1.43)
+2025-09-05 12:53:13.883 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Query Server started successfully!
+2025-09-05 12:53:13.883 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8081
+2025-09-05 12:53:13.884 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8081
+2025-09-05 12:53:13.884 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
+2025-09-05 12:53:13.884 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 12:53:14.560 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@75cacb3e
+2025-09-05 12:53:14.562 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 12:53:14.563 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
+2025-09-05 12:53:14.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
+2025-09-05 12:53:14.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
+2025-09-05 12:53:14.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
+2025-09-05 12:53:14.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Query execution ready - found 5 schemas
+2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP query tools are ready for database operations!
+2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Query Server initialization complete!
+2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
+2025-09-05 12:53:14.729 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - executeQuery: Execute SELECT queries against the database
+2025-09-05 12:53:14.729 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - explainQuery: Get execution plan for a query
+2025-09-05 12:53:14.729 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - countTableRows: Count rows in a specified table
+2025-09-05 12:53:14.729 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testConnection: Test database connectivity
+2025-09-05 13:05:53.580 [reactor-http-nio-4] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - query-server, version=1.0.0]
+2025-09-05 13:06:51.708 [reactor-http-nio-6] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - query-server, version=1.0.0]
+2025-09-05 13:07:05.467 [boundedElastic-8] INFO  c.b.mcpserver.QueryToolsService - 🔧 MCP Tool called: executeQuery(sql='SELECT * FROM public.customers LIMIT 10;...', maxRows=10)
+2025-09-05 13:07:05.535 [boundedElastic-8] INFO  c.b.m.service.QueryExecutionService - Executing query with max rows 10: SELECT * FROM public.customers LIMIT 10;
+2025-09-05 13:07:05.646 [boundedElastic-8] INFO  c.b.m.service.QueryExecutionService - Query executed successfully. Returned 10 rows in 179 ms
+2025-09-05 13:07:05.646 [boundedElastic-8] INFO  c.b.mcpserver.QueryToolsService - ✅ Successfully executed query, returned 10 rows in 179 ms
+2025-09-05 13:07:05.651 [boundedElastic-8] DEBUG c.b.mcpserver.QueryToolsService - 📤 Returning query result: 3614 characters
+2025-09-05 13:08:07.998 [boundedElastic-8] INFO  c.b.mcpserver.QueryToolsService - 🔧 MCP Tool called: executeQuery(sql='SELECT * FROM public.customers LIMIT 10...', maxRows=10)
+2025-09-05 13:08:08.075 [boundedElastic-8] INFO  c.b.m.service.QueryExecutionService - Executing query with max rows 10: SELECT * FROM public.customers LIMIT 10
+2025-09-05 13:08:08.168 [boundedElastic-8] INFO  c.b.m.service.QueryExecutionService - Query executed successfully. Returned 10 rows in 169 ms
+2025-09-05 13:08:08.169 [boundedElastic-8] INFO  c.b.mcpserver.QueryToolsService - ✅ Successfully executed query, returned 10 rows in 169 ms
+2025-09-05 13:08:08.170 [boundedElastic-8] DEBUG c.b.mcpserver.QueryToolsService - 📤 Returning query result: 3616 characters
+2025-09-05 13:12:20.418 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-05 13:12:20.906 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 1859 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 13:12:20.906 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 13:12:20.906 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 13:12:21.629 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:12:21.691 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 13:12:21.720 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 13:12:21.720 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 13:12:21.720 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 13:12:21.721 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 13:12:21.848 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8081 (http)
+2025-09-05 13:12:21.858 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.147 seconds (process running for 1.335)
+2025-09-05 13:12:21.859 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Query Server started successfully!
+2025-09-05 13:12:21.859 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8081
+2025-09-05 13:12:21.860 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8081
+2025-09-05 13:12:21.860 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
+2025-09-05 13:12:21.860 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 13:12:22.560 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a6dc5ea
+2025-09-05 13:12:22.562 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 13:12:22.563 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
+2025-09-05 13:12:22.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
+2025-09-05 13:12:22.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
+2025-09-05 13:12:22.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
+2025-09-05 13:12:22.565 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Query execution ready - found 5 schemas
+2025-09-05 13:12:22.716 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP query tools are ready for database operations!
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Query Server initialization complete!
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - executeQuery: Execute SELECT queries against the database
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - explainQuery: Get execution plan for a query
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - countTableRows: Count rows in a specified table
+2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testConnection: Test database connectivity
+2025-09-05 13:12:50.428 [SpringApplicationShutdownHook] INFO  o.s.c.s.DefaultLifecycleProcessor - Shutdown phase 2147482623 ends with 1 bean still running after timeout of 30000ms: [webServerGracefulShutdown]
+2025-09-05 13:12:50.432 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown aborted with one or more requests still active
+2025-09-05 13:12:52.516 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-05 13:12:52.517 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-05 13:17:49.665 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-05 13:17:49.666 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-09-05 13:17:50.159 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 2892 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 13:17:50.160 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 13:17:50.160 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 13:17:50.844 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:17:50.904 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 13:17:50.934 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 13:17:50.934 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 13:17:50.935 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 13:17:50.935 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 13:17:51.058 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8081 (http)
+2025-09-05 13:17:51.065 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.09 seconds (process running for 1.279)
+2025-09-05 13:17:51.066 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Query Server started successfully!
+2025-09-05 13:17:51.066 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8081
+2025-09-05 13:17:51.067 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8081
+2025-09-05 13:17:51.067 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
+2025-09-05 13:17:51.067 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 13:17:51.761 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-05 13:17:51.763 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-05 13:17:52.241 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@722b2728
+2025-09-05 13:17:52.245 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 13:17:52.247 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
+2025-09-05 13:17:52.250 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
+2025-09-05 13:17:52.250 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
+2025-09-05 13:17:52.250 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
+2025-09-05 13:17:52.250 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Query execution ready - found 5 schemas
+2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP query tools are ready for database operations!
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Query Server initialization complete!
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - executeQuery: Execute SELECT queries against the database
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - explainQuery: Get execution plan for a query
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - countTableRows: Count rows in a specified table
+2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testConnection: Test database connectivity
+2025-09-05 13:18:10.602 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - query-server, version=1.0.0]
+2025-09-05 13:19:11.980 [boundedElastic-3] INFO  c.b.mcpserver.QueryToolsService - 🔧 MCP Tool called: executeQuery(sql='SELECT customer_id, first_name, last_name, email F...', maxRows=10)
+2025-09-05 13:19:12.050 [boundedElastic-3] INFO  c.b.m.service.QueryExecutionService - Executing query with max rows 10: SELECT customer_id, first_name, last_name, email FROM public.customers ORDER BY customer_id ASC LIMI
+2025-09-05 13:19:12.141 [boundedElastic-3] INFO  c.b.m.service.QueryExecutionService - Query executed successfully. Returned 10 rows in 160 ms
+2025-09-05 13:19:12.143 [boundedElastic-3] INFO  c.b.mcpserver.QueryToolsService - ✅ Successfully executed query, returned 10 rows in 160 ms
+2025-09-05 13:19:12.145 [boundedElastic-3] DEBUG c.b.mcpserver.QueryToolsService - 📤 Returning formatted query result: 1220 characters
+2025-09-05 13:23:28.554 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-05 13:23:28.555 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-09-05 13:23:29.046 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 4454 (/Users/dbbaskette/Projects/plumchat/mcp-query-server/target/mcp-query-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
+2025-09-05 13:23:29.046 [main] DEBUG c.b.mcpserver.McpServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-05 13:23:29.047 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "local"
+2025-09-05 13:23:29.741 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:23:29.798 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-09-05 13:23:29.829 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
+2025-09-05 13:23:29.829 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-09-05 13:23:29.829 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-09-05 13:23:29.830 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-09-05 13:23:29.956 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8081 (http)
+2025-09-05 13:23:29.963 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.11 seconds (process running for 1.294)
+2025-09-05 13:23:29.965 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Query Server started successfully!
+2025-09-05 13:23:29.965 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8081
+2025-09-05 13:23:29.965 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8081
+2025-09-05 13:23:29.966 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
+2025-09-05 13:23:29.966 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 13:23:30.632 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@722b2728
+2025-09-05 13:23:30.634 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 13:23:30.635 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
+2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
+2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
+2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
+2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
+2025-09-05 13:23:30.652 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-05 13:23:30.652 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Query execution ready - found 5 schemas
+2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP query tools are ready for database operations!
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Query Server initialization complete!
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - executeQuery: Execute SELECT queries against the database
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - explainQuery: Get execution plan for a query
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - countTableRows: Count rows in a specified table
+2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testConnection: Test database connectivity
+2025-09-05 13:23:33.897 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - query-server, version=1.0.0]
+2025-09-05 13:24:32.841 [boundedElastic-4] INFO  c.b.mcpserver.QueryToolsService - 🔧 MCP Tool called: executeQuery(sql='SELECT * FROM public.customers LIMIT 10;...', maxRows=10)
+2025-09-05 13:24:32.908 [boundedElastic-4] INFO  c.b.m.service.QueryExecutionService - Executing query with max rows 10: SELECT * FROM public.customers LIMIT 10;
+2025-09-05 13:24:32.997 [boundedElastic-4] INFO  c.b.m.service.QueryExecutionService - Query executed successfully. Returned 10 rows in 155 ms
+2025-09-05 13:24:32.997 [boundedElastic-4] INFO  c.b.mcpserver.QueryToolsService - ✅ Successfully executed query, returned 10 rows in 155 ms
+2025-09-05 13:24:33.000 [boundedElastic-4] DEBUG c.b.mcpserver.QueryToolsService - 📤 Returning structured query result: 1641 characters

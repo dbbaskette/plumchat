@@ -1,5 +1,6 @@
 package com.baskettecase.plumchat.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,9 @@ public class StatusController {
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final ChatService chatService;
+    
+    @Value("${spring.ai.openai.chat.options.model:gpt-4o-mini}")
+    private String openAiModel;
 
     public StatusController(ChatService chatService) {
         this.chatService = chatService;
@@ -34,11 +38,7 @@ public class StatusController {
     public Map<String, Object> getConnectionStatus() {
         return Map.of(
             "schema", checkMcpServerStatus("schema-server", "http://localhost:8080"),
-            "query", Map.of(
-                "connected", false,
-                "status", "Not Implemented",
-                "note", "Query server not yet implemented"
-            ),
+            "query", checkMcpServerStatus("query-server", "http://localhost:8081"),
             "mgmt", Map.of(
                 "connected", false,
                 "status", "Not Implemented", 
@@ -56,7 +56,7 @@ public class StatusController {
         return Map.of(
             "connected", hasApiKey,
             "healthy", hasApiKey,
-            "model", System.getProperty("OPENAI_MODEL", "gpt-4o-mini"),
+            "model", openAiModel,
             "hasApiKey", hasApiKey,
             "hasModel", true,
             "hasChatClient", true
