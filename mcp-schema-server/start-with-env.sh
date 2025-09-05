@@ -18,13 +18,35 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}🚀 Starting MCP Schema Server with Environment Configuration${NC}"
 
+# Function to find the current JAR file
+find_current_jar() {
+    local target_dir="$SCRIPT_DIR/target"
+    local jar_pattern="mcp-schema-server-*.jar"
+    
+    # Find the most recent JAR file matching the pattern
+    local jar_file=$(find "$target_dir" -name "$jar_pattern" -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -1 | cut -d' ' -f2-)
+    
+    if [ -z "$jar_file" ]; then
+        # Fallback for systems without find -printf (like macOS)
+        jar_file=$(ls -t "$target_dir"/$jar_pattern 2>/dev/null | head -1)
+    fi
+    
+    if [ -z "$jar_file" ] || [ ! -f "$jar_file" ]; then
+        echo -e "${RED}❌ No JAR file found in $target_dir${NC}"
+        echo -e "${YELLOW}💡 Try running with --build to build the project first${NC}"
+        exit 1
+    fi
+    
+    echo "$jar_file"
+}
+
 # Function to kill existing MCP server processes
 kill_existing_servers() {
     echo -e "${BLUE}🔍 Checking for existing MCP server processes...${NC}"
     
-    # Find Java processes running our specific JAR file
-    local jar_name="mcp-schema-server-0.0.1.jar"
-    local existing_pids=$(ps aux | grep "$jar_name" | grep -v grep | awk '{print $2}')
+    # Find Java processes running our JAR file (any version)
+    local jar_name="mcp-schema-server"
+    local existing_pids=$(ps aux | grep "$jar_name" | grep -v grep | awk '{print $2}' || true)
     
     if [ -n "$existing_pids" ]; then
         echo -e "${YELLOW}⚠️ Found existing MCP schema server processes:${NC}"
@@ -101,25 +123,30 @@ fi
 
 # Default transport mode
 TRANSPORT_MODE="sse"
-JAR_FILE="$SCRIPT_DIR/target/mcp-schema-server-0.0.1.jar"
+BUILD_PROJECT=false
+
+# Find the current JAR file
+JAR_FILE=$(find_current_jar)
 
 # Parse command line arguments
 for arg in "$@"; do
     case $arg in
         --sse)
             TRANSPORT_MODE="sse"
-            shift
             ;;
         --stdio)
             TRANSPORT_MODE="stdio"
-            shift
+            ;;
+        --build)
+            BUILD_PROJECT=true
             ;;
         -h|--help)
-            echo "Usage: $0 [--sse|--stdio]"
+            echo "Usage: $0 [--sse|--stdio|--build]"
             echo ""
             echo "Options:"
             echo "  --sse     Use Server-Sent Events transport (default, for web clients)"
             echo "  --stdio   Use Standard I/O transport (for Claude Desktop)"
+            echo "  --build   Force rebuild the project with 'mvn clean package'"
             echo ""
             echo "Environment variables are loaded from: $ENV_FILE"
             echo ""
@@ -137,17 +164,35 @@ for arg in "$@"; do
     esac
 done
 
-# Check if JAR exists
+if [ ! -f "$JAR_FILE" ] || [ "$BUILD_PROJECT" = true ]; then
+    echo -e "${BLUE}🔨 Building project with Maven...${NC}"
+    echo -e "  Running: ${YELLOW}mvn clean package -DskipTests${NC}"
+    echo -e ""
+    
+    cd "$SCRIPT_DIR"
+    if mvn clean package -DskipTests; then
+        echo -e "${GREEN}✓ Build completed successfully${NC}"
+        echo -e ""
+        
+        # Re-find the JAR file after build
+        JAR_FILE=$(find_current_jar)
+        echo -e "${GREEN}✓ Found JAR file: $(basename "$JAR_FILE")${NC}"
+    else
+        echo -e "${RED}❌ Build failed${NC}"
+        exit 1
+    fi
+fi
+
+# Final check if JAR exists
 if [ ! -f "$JAR_FILE" ]; then
     echo -e "${RED}❌ JAR file not found: $JAR_FILE${NC}"
-    echo -e "${YELLOW}💡 Run: mvn clean package -DskipTests${NC}"
     exit 1
 fi
 
 # Display configuration
 echo -e "${BLUE}⚙️ Configuration:${NC}"
 echo -e "  Transport Mode: ${YELLOW}$TRANSPORT_MODE${NC}"
-echo -e "  JAR File: ${YELLOW}$JAR_FILE${NC}"
+echo -e "  JAR File: ${YELLOW}$(basename "$JAR_FILE")${NC}"
 echo -e "  Database URL: ${YELLOW}${GREENPLUM_URL:-'Not set (will use default)'}${NC}"
 echo -e "  Database User: ${YELLOW}${GREENPLUM_USER:-'Not set (will use default)'}${NC}"
 

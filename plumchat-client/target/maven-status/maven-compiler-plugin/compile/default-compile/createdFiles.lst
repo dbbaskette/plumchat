@@ -1,0 +1,10 @@
+com/baskettecase/plumchat/controller/WebController.class
+com/baskettecase/plumchat/service/McpToolDiscoveryService.class
+com/baskettecase/plumchat/model/ChatResponse.class
+com/baskettecase/plumchat/model/ChatResponse$ChatMessage.class
+com/baskettecase/plumchat/controller/ChatController.class
+com/baskettecase/plumchat/config/ChatConfig.class
+com/baskettecase/plumchat/PlumChatApplication.class
+com/baskettecase/plumchat/controller/StatusController.class
+com/baskettecase/plumchat/model/ChatRequest.class
+com/baskettecase/plumchat/service/ChatService.class

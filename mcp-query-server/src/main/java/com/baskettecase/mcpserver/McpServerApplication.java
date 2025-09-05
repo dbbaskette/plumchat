@@ -1,9 +1,7 @@
 package com.baskettecase.mcpserver;
 
-import com.baskettecase.mcpserver.ToolsService;
-import org.springframework.ai.tool.ToolCallback;
+import com.baskettecase.mcpserver.QueryToolsService;
 import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,8 +17,8 @@ public class McpServerApplication {
 	}
 
 	@Bean
-	public ToolCallbackProvider toolsProvider(ToolsService toolsService) {
-		return MethodToolCallbackProvider.builder().toolObjects(toolsService).build();
+	public ToolCallbackProvider toolsProvider(QueryToolsService queryToolsService) {
+		return MethodToolCallbackProvider.builder().toolObjects(queryToolsService).build();
 	}
 
 }
