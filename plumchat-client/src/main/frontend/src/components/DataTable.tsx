@@ -75,7 +75,7 @@ export default function DataTable({ table }: DataTableProps) {
           return <span className="text-gray-400 italic">NULL</span>
         }
         
-        if (typeof value === 'string' && value.length > 100) {
+        if (typeof value === 'string' && value.length > 50) {
           return (
             <div className="max-w-xs">
               <div className="truncate" title={value}>
@@ -85,7 +85,7 @@ export default function DataTable({ table }: DataTableProps) {
           )
         }
         
-        return <span>{String(value)}</span>
+        return <span className="whitespace-nowrap">{String(value)}</span>
       },
     }))
   }, [table.columns])
@@ -212,15 +212,15 @@ export default function DataTable({ table }: DataTableProps) {
 
       {/* Table */}
       <div className="border border-gray-700/50 rounded-lg overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
+        <div className="overflow-x-auto max-w-full">
+          <table className="min-w-full table-auto">
             <thead className="bg-gray-50">
               {reactTable.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-700/50"
+                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-700/50 whitespace-nowrap"
                     >
                       {header.isPlaceholder
                         ? null

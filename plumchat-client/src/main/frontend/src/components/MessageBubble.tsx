@@ -4,7 +4,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { User, Bot, Database, AlertCircle, Table } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
-import DataTable from './DataTable'
+import { motion, AnimatePresence } from 'framer-motion'
+import EnhancedDataTable from './EnhancedDataTable'
 import SchemaViewer from './SchemaViewer'
 import type { ChatMessage } from '../types/chat'
 
@@ -15,6 +16,7 @@ interface MessageBubbleProps {
 export default function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === 'user'
   const timestamp = new Date(message.timestamp)
+  const hasTables = message.data?.tables && message.data.tables.length > 0
   
   const renderMessageContent = () => {
     if (message.data?.type === 'error') {
@@ -58,59 +60,97 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
           </ReactMarkdown>
         </div>
 
-        {/* Render structured data */}
-        {message.data && (
-          <div className="space-y-4">
-            {/* Tables */}
-            {message.data.tables && message.data.tables.length > 0 && (
-              <div className="space-y-4">
-                {message.data.tables.map((table, index) => (
-                  <div key={index} className="border border-gray-700/50 rounded-lg overflow-hidden">
-                    <div className="bg-gray-800/40 px-4 py-3 border-b border-gray-700/50">
-                      <div className="flex items-center space-x-2">
-                        <Table className="w-4 h-4 text-gray-600" />
-                        <span className="font-medium text-gray-900">
+        {/* Render structured data with animations */}
+        <AnimatePresence>
+          {message.data && (
+            <motion.div 
+              className="space-y-6 mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Enhanced Tables */}
+              {message.data.tables && message.data.tables.length > 0 && (
+                <div className="space-y-6">
+                  {message.data.tables.map((table, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ 
+                        duration: 0.4, 
+                        delay: index * 0.1,
+                        ease: "easeOut" 
+                      }}
+                      className="space-y-2"
+                    >
+                      <motion.div 
+                        className="flex items-center space-x-2 px-1"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 + 0.2 }}
+                      >
+                        <Table className="w-5 h-5 text-primary" />
+                        <span className="font-medium text-foreground text-lg">
                           {table.schema}.{table.name}
                         </span>
-                      </div>
-                    </div>
-                    <DataTable table={table} />
-                  </div>
-                ))}
-              </div>
-            )}
+                        <span className="text-sm text-muted-foreground">
+                          ({table.rows?.length || 0} rows)
+                        </span>
+                      </motion.div>
+                      <EnhancedDataTable table={table} />
+                    </motion.div>
+                  ))}
+                </div>
+              )}
 
-            {/* Schemas */}
-            {message.data.schemas && message.data.schemas.length > 0 && (
-              <div className="space-y-4">
-                {message.data.schemas.map((schema, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden bg-gray-50 shadow-sm">
-                    <div className="bg-gray-100 px-4 py-3 border-b border-gray-200">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <Database className="w-4 h-4 text-gray-600" />
-                          <span className="font-medium text-gray-800">
-                            Schema: {schema.name}
+              {/* Enhanced Schemas */}
+              {message.data.schemas && message.data.schemas.length > 0 && (
+                <div className="space-y-4">
+                  {message.data.schemas.map((schema, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: (message.data.tables?.length || 0) * 0.1 + index * 0.1
+                      }}
+                      className="border border-border rounded-lg overflow-hidden bg-card shadow-sm"
+                    >
+                      <div className="bg-muted/50 px-4 py-3 border-b border-border">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            <Database className="w-4 h-4 text-primary" />
+                            <span className="font-medium text-card-foreground">
+                              Schema: {schema.name}
+                            </span>
+                          </div>
+                          <span className="text-sm text-muted-foreground bg-secondary px-2 py-1 rounded-full">
+                            {schema.tables.length} tables
                           </span>
                         </div>
-                        <span className="text-sm text-gray-600 bg-gray-200 px-2 py-1 rounded-full">
-                          {schema.tables.length} tables
-                        </span>
                       </div>
-                    </div>
-                    <SchemaViewer schema={schema} />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+                      <SchemaViewer schema={schema} />
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     )
   }
 
   return (
-    <div className={`flex space-x-3 ${isUser ? 'justify-end' : 'justify-start'}`}>
+    <motion.div 
+      className={`flex space-x-3 ${isUser ? 'justify-end' : 'justify-start'}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
       {!isUser && (
         <div className="flex-shrink-0">
           <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
@@ -121,7 +161,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
       
       <div className={`flex-1 ${isUser ? 'order-1' : ''}`}>
         <div className={`chat-message ${isUser ? 'user' : 'assistant'} ${
-          isUser ? '' : 'max-w-3xl'
+          isUser ? '' : (hasTables ? 'max-w-none' : 'max-w-3xl')
         }`}>
           {renderMessageContent()}
         </div>
@@ -138,6 +178,6 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

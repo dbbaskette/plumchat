@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class QueryResult {
     private List<String> columnNames;
+    private List<Map<String, Object>> columnMetadata;
     private List<Map<String, Object>> rows;
     private int rowCount;
     private long executionTimeMs;
@@ -62,5 +63,13 @@ public class QueryResult {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public List<Map<String, Object>> getColumnMetadata() {
+        return columnMetadata;
+    }
+
+    public void setColumnMetadata(List<Map<String, Object>> columnMetadata) {
+        this.columnMetadata = columnMetadata;
     }
 }

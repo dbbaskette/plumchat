@@ -47,8 +47,21 @@ public class QueryExecutionService {
                 int columnCount = metaData.getColumnCount();
 
                 List<String> columnNames = new ArrayList<>();
+                List<Map<String, Object>> columnMetadata = new ArrayList<>();
+                
                 for (int i = 1; i <= columnCount; i++) {
-                    columnNames.add(metaData.getColumnName(i));
+                    String columnName = metaData.getColumnName(i);
+                    columnNames.add(columnName);
+                    
+                    // Collect column metadata
+                    Map<String, Object> colMeta = new LinkedHashMap<>();
+                    colMeta.put("name", columnName);
+                    colMeta.put("type", metaData.getColumnTypeName(i));
+                    colMeta.put("nullable", metaData.isNullable(i) != ResultSetMetaData.columnNoNulls);
+                    colMeta.put("precision", metaData.getPrecision(i));
+                    colMeta.put("scale", metaData.getScale(i));
+                    
+                    columnMetadata.add(colMeta);
                 }
 
                 List<Map<String, Object>> rows = new ArrayList<>();
@@ -68,7 +81,9 @@ public class QueryExecutionService {
                 long executionTime = System.currentTimeMillis() - startTime;
                 logger.info("Query executed successfully. Returned {} rows in {} ms", rowCount, executionTime);
 
-                return new QueryResult(columnNames, rows, rowCount, executionTime);
+                QueryResult queryResult = new QueryResult(columnNames, rows, rowCount, executionTime);
+                queryResult.setColumnMetadata(columnMetadata);
+                return queryResult;
             }
         } catch (SQLException e) {
             long executionTime = System.currentTimeMillis() - startTime;

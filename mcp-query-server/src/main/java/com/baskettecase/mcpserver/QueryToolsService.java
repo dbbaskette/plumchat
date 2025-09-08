@@ -69,19 +69,26 @@ public class QueryToolsService {
             structuredResponse.put("message", message.toString());
             
             // Structured data for UI table rendering
-            if (result.getRowCount() > 0 && result.getColumnNames() != null && result.getRows() != null) {
+            if (result.getColumnNames() != null) {
                 structuredResponse.put("columnNames", result.getColumnNames());
                 
-                // Convert rows from List<Map<String, Object>> to List<List<Object>>
-                List<List<Object>> rowData = new ArrayList<>();
-                for (Map<String, Object> row : result.getRows()) {
-                    List<Object> rowValues = new ArrayList<>();
-                    for (String column : result.getColumnNames()) {
-                        rowValues.add(row.get(column));
-                    }
-                    rowData.add(rowValues);
+                // Add column metadata if available
+                if (result.getColumnMetadata() != null) {
+                    structuredResponse.put("columnMetadata", result.getColumnMetadata());
                 }
-                structuredResponse.put("rows", rowData);
+                
+                if (result.getRowCount() > 0 && result.getRows() != null) {
+                    // Convert rows from List<Map<String, Object>> to List<List<Object>>
+                    List<List<Object>> rowData = new ArrayList<>();
+                    for (Map<String, Object> row : result.getRows()) {
+                        List<Object> rowValues = new ArrayList<>();
+                        for (String column : result.getColumnNames()) {
+                            rowValues.add(row.get(column));
+                        }
+                        rowData.add(rowValues);
+                    }
+                    structuredResponse.put("rows", rowData);
+                }
             }
             
             // Convert to JSON and return

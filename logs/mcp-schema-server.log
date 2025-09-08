@@ -1,310 +1,277 @@
-2025-09-05 12:42:30.706 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 12:42:30.740 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 91420 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 12:42:30.741 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 12:42:31.447 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 12:42:31.506 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 12:42:31.537 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 12:42:31.537 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 12:42:31.538 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 12:42:31.538 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 12:42:31.681 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
-2025-09-05 12:42:31.688 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.141 seconds (process running for 1.336)
-2025-09-05 12:42:31.689 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Schema Server started successfully!
-2025-09-05 12:42:31.689 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8080
-2025-09-05 12:42:31.690 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8080
-2025-09-05 12:42:31.690 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
-2025-09-05 12:42:31.690 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-09-05 12:42:32.804 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58f7215c
-2025-09-05 12:42:32.807 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-09-05 12:42:32.809 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
-2025-09-05 12:42:32.812 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
-2025-09-05 12:42:32.812 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
-2025-09-05 12:42:32.812 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
-2025-09-05 12:42:32.812 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
-2025-09-05 12:42:32.978 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
-2025-09-05 12:42:32.978 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
-2025-09-05 12:42:32.979 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
-2025-09-05 12:42:32.979 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
-2025-09-05 12:42:32.979 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
-2025-09-05 12:42:32.979 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Schema discovery working - found 5 schemas
-2025-09-05 12:42:32.979 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP tools are ready for database operations!
-2025-09-05 12:42:32.981 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Schema Server initialization complete!
-2025-09-05 12:42:32.982 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
-2025-09-05 12:42:32.982 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getAllSchemas: Get all database schemas
-2025-09-05 12:42:32.982 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTablesInSchema: Get tables in a specific schema
-2025-09-05 12:42:32.982 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTableInfo: Get detailed table information
-2025-09-05 12:42:32.982 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testMcpConnection: Test MCP server connectivity
-2025-09-05 12:43:42.653 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:43:56.630 [reactor-http-nio-5] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:45:02.018 [reactor-http-nio-8] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:46:33.250 [reactor-http-nio-10] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:47:16.082 [reactor-http-nio-12] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:47:55.748 [boundedElastic-7] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getTableInfo(schemaName='public', tableName='customers')
-2025-09-05 12:47:56.321 [boundedElastic-7] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved table info for 'public.customers'
-2025-09-05 12:50:41.551 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getTablesInSchema(schemaName='public')
-2025-09-05 12:50:46.644 [boundedElastic-8] INFO  c.b.m.service.SchemaDiscoveryService - Found 17 tables in schema 'public'
-2025-09-05 12:50:46.644 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved 17 tables from schema 'public'
-2025-09-05 12:50:46.671 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getTableInfo(schemaName='public', tableName='customers')
-2025-09-05 12:50:47.007 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved table info for 'public.customers'
-2025-09-05 12:50:55.521 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getAllSchemas()
-2025-09-05 12:50:56.168 [boundedElastic-8] INFO  c.b.m.service.SchemaDiscoveryService - Found 5 user schemas
-2025-09-05 12:50:56.168 [boundedElastic-8] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved 5 schemas
-2025-09-05 12:52:51.534 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 12:52:51.572 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 95180 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 12:52:51.573 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 12:52:52.282 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 12:52:52.337 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 12:52:52.365 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 12:52:52.366 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 12:52:52.366 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 12:52:52.366 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 12:52:54.556 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2025-09-05 12:52:54.573 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-09-05 12:52:54.580 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2025-09-05 12:53:08.622 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-05 12:53:12.802 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 12:53:12.839 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 95599 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 12:53:12.840 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 12:53:13.536 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 12:53:13.666 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 12:53:13.724 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 12:53:13.725 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 12:53:13.726 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 12:53:13.726 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 12:53:13.865 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
-2025-09-05 12:53:13.872 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.234 seconds (process running for 1.42)
-2025-09-05 12:53:13.874 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Schema Server started successfully!
-2025-09-05 12:53:13.874 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8080
-2025-09-05 12:53:13.875 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8080
-2025-09-05 12:53:13.875 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
-2025-09-05 12:53:13.875 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-09-05 12:53:14.549 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ff1f465
-2025-09-05 12:53:14.550 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-09-05 12:53:14.552 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
-2025-09-05 12:53:14.554 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
-2025-09-05 12:53:14.554 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
-2025-09-05 12:53:14.554 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
-2025-09-05 12:53:14.554 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
-2025-09-05 12:53:14.724 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
-2025-09-05 12:53:14.724 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
-2025-09-05 12:53:14.724 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
-2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
-2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
-2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Schema discovery working - found 5 schemas
-2025-09-05 12:53:14.725 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP tools are ready for database operations!
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Schema Server initialization complete!
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getAllSchemas: Get all database schemas
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTablesInSchema: Get tables in a specific schema
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTableInfo: Get detailed table information
-2025-09-05 12:53:14.728 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testMcpConnection: Test MCP server connectivity
-2025-09-05 12:53:26.418 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-09-05 12:53:28.497 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-09-05 12:53:28.497 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-09-05 12:53:29.267 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:57:48.762 [reactor-http-nio-5] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:59:32.398 [reactor-http-nio-7] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 12:59:46.618 [boundedElastic-1] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getTableInfo(schemaName='public', tableName='customers')
-2025-09-05 12:59:47.128 [boundedElastic-1] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved table info for 'public.customers'
-2025-09-05 13:05:53.520 [reactor-http-nio-10] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 13:06:51.675 [reactor-http-nio-12] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 13:12:20.414 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-05 13:12:20.876 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 13:12:20.914 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 1857 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 13:12:20.914 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 13:12:21.618 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 13:12:21.676 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 13:12:21.704 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 13:12:21.705 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 13:12:21.705 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 13:12:21.705 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 13:12:21.825 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
-2025-09-05 13:12:21.835 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.123 seconds (process running for 1.312)
-2025-09-05 13:12:21.836 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Schema Server started successfully!
-2025-09-05 13:12:21.836 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8080
-2025-09-05 13:12:21.837 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8080
-2025-09-05 13:12:21.837 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
-2025-09-05 13:12:21.837 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-09-05 13:12:22.541 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a833595
-2025-09-05 13:12:22.543 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-09-05 13:12:22.544 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
-2025-09-05 13:12:22.546 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
-2025-09-05 13:12:22.546 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
-2025-09-05 13:12:22.546 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
-2025-09-05 13:12:22.546 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Schema discovery working - found 5 schemas
-2025-09-05 13:12:22.715 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP tools are ready for database operations!
-2025-09-05 13:12:22.718 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Schema Server initialization complete!
-2025-09-05 13:12:22.718 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
-2025-09-05 13:12:22.718 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getAllSchemas: Get all database schemas
-2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTablesInSchema: Get tables in a specific schema
-2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTableInfo: Get detailed table information
-2025-09-05 13:12:22.719 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testMcpConnection: Test MCP server connectivity
-2025-09-05 13:12:50.423 [SpringApplicationShutdownHook] INFO  o.s.c.s.DefaultLifecycleProcessor - Shutdown phase 2147482623 ends with 1 bean still running after timeout of 30000ms: [webServerGracefulShutdown]
-2025-09-05 13:12:50.429 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown aborted with one or more requests still active
-2025-09-05 13:12:52.500 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-09-05 13:12:52.503 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-09-05 13:17:49.661 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-05 13:17:49.662 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-09-05 13:17:50.128 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 13:17:50.159 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 2890 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 13:17:50.159 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 13:17:50.830 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 13:17:50.888 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 13:17:50.917 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 13:17:50.918 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 13:17:50.918 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 13:17:50.918 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 13:17:51.045 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
-2025-09-05 13:17:51.055 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.08 seconds (process running for 1.268)
-2025-09-05 13:17:51.056 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Schema Server started successfully!
-2025-09-05 13:17:51.056 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8080
-2025-09-05 13:17:51.057 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8080
-2025-09-05 13:17:51.057 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
-2025-09-05 13:17:51.057 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-09-05 13:17:51.740 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-09-05 13:17:51.742 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-09-05 13:17:52.241 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ad1a276
-2025-09-05 13:17:52.244 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-09-05 13:17:52.246 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
-2025-09-05 13:17:52.249 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
-2025-09-05 13:17:52.249 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
-2025-09-05 13:17:52.249 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
-2025-09-05 13:17:52.249 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Schema discovery working - found 5 schemas
-2025-09-05 13:17:52.404 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP tools are ready for database operations!
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Schema Server initialization complete!
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getAllSchemas: Get all database schemas
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTablesInSchema: Get tables in a specific schema
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTableInfo: Get detailed table information
-2025-09-05 13:17:52.407 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testMcpConnection: Test MCP server connectivity
-2025-09-05 13:18:10.494 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
-2025-09-05 13:19:06.226 [boundedElastic-1] INFO  c.b.mcpserver.ToolsService - 🔧 MCP Tool called: getTableInfo(schemaName='public', tableName='customers')
-2025-09-05 13:19:06.763 [boundedElastic-1] INFO  c.b.mcpserver.ToolsService - ✅ Successfully retrieved table info for 'public.customers'
-2025-09-05 13:23:28.550 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-05 13:23:28.550 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-09-05 13:23:29.013 [main] INFO  o.s.boot.SpringApplication - 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-
-2025-09-05 13:23:29.047 [main] INFO  c.b.mcpserver.McpServerApplication - Starting McpServerApplication using Java 21.0.8 with PID 4452 (/Users/dbbaskette/Projects/plumchat/mcp-schema-server/target/mcp-schema-server-0.0.6.jar started by dbbaskette in /Users/dbbaskette/Projects/plumchat)
-2025-09-05 13:23:29.047 [main] INFO  c.b.mcpserver.McpServerApplication - The following 1 profile is active: "sse"
-2025-09-05 13:23:29.738 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-09-05 13:23:29.794 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
-2025-09-05 13:23:29.826 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Registered tools: 4
-2025-09-05 13:23:29.826 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
-2025-09-05 13:23:29.826 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
-2025-09-05 13:23:29.826 [main] INFO  o.s.a.m.s.a.McpServerAutoConfiguration - Enable completions capabilities
-2025-09-05 13:23:29.956 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
-2025-09-05 13:23:29.965 [main] INFO  c.b.mcpserver.McpServerApplication - Started McpServerApplication in 1.111 seconds (process running for 1.296)
-2025-09-05 13:23:29.967 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🚀 MCP Schema Server started successfully!
-2025-09-05 13:23:29.967 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌐 Server running on port: 8080
-2025-09-05 13:23:29.967 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📡 MCP tools endpoints available at: http://localhost:8080
-2025-09-05 13:23:29.967 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Checking database connectivity...
-2025-09-05 13:23:29.968 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-09-05 13:23:30.621 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-09-05 13:23:30.622 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-09-05 13:23:30.631 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a833595
-2025-09-05 13:23:30.634 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-09-05 13:23:30.635 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Database connection successful!
-2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📊 Database: PostgreSQL 12.22
-2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔗 JDBC URL: jdbc:postgresql://big-data-001.kuhn-labs.com:5432/insurance_megacorp
-2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 👤 User: gpadmin
-2025-09-05 13:23:30.638 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🔍 Testing schema access...
-2025-09-05 13:23:30.829 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: gp_toolkit
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: information_schema
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: madlib
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_aoseg
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService -    📂 Found schema: pg_bitmapindex
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService - ✅ Schema discovery working - found 5 schemas
-2025-09-05 13:23:30.830 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🛠️  MCP tools are ready for database operations!
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService - 🌟 MCP Schema Server initialization complete!
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService - 📋 Available MCP tools:
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getAllSchemas: Get all database schemas
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTablesInSchema: Get tables in a specific schema
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - getTableInfo: Get detailed table information
-2025-09-05 13:23:30.834 [main] INFO  c.b.m.s.DatabaseConnectivityService -    - testMcpConnection: Test MCP server connectivity
-2025-09-05 13:23:33.785 [reactor-http-nio-3] INFO  i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=plumchat-client - schema-server, version=1.0.0]
+2025-09-08 00:03:24.122 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m51s583ms).
+2025-09-08 00:36:01.848 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@53bdcd68 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-09-08 01:09:40.602 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m16s480ms).
+2025-09-08 01:27:20.261 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m39s659ms).
+2025-09-08 02:02:44.323 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m24s62ms).
+2025-09-08 02:37:18.154 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2dffc47b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-09-08 02:54:12.474 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m28s151ms).
+2025-09-08 03:38:30.042 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m17s568ms).
+2025-09-08 04:12:28.053 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m58s11ms).
+2025-09-08 04:29:11.078 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m43s25ms).
+2025-09-08 04:45:33.067 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m21s989ms).
+2025-09-08 05:39:21.977 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m48s910ms).
+2025-09-08 06:17:38.370 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m16s393ms).
+2025-09-08 06:18:15.191 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1b974ecb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-09-08 06:40:29.811 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m51s434ms).
+2025-09-08 07:12:02.235 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (e81c777e-4102-42cb-be75-edd077b943a9)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:12:15.237 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m45s425ms).
+2025-09-08 07:13:22.281 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (aabdf6aa-f79b-4963-a6f8-4a0faaa9be9d)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:14:42.317 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (a070c96d-6f6c-4b77-9f8a-719a1306def0)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:16:02.355 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (c3d434bc-32b3-445b-8e73-53eac67e41ea)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:24:22.039 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m36s740ms).
+2025-09-08 07:24:29.131 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (09c6cd54-99af-4bbb-a7e1-1495066c03b3)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:25:38.919 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (931e60d7-3517-48ca-8fcb-796f19f3b165)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:26:44.083 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (8007822e-bc46-4300-98c8-2aae8a1482df)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:27:49.181 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (703e2ce7-1c61-4770-9004-390c145b67e1)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:28:54.267 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (0114ea34-e479-4422-8c4f-c5daa5f58855)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2025-09-08 07:29:59.426 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (4ffa7ebb-796c-42f9-85f4-e673eeb60457)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.UnknownHostException: big-data-001.kuhn-labs.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
